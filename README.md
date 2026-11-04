@@ -8,7 +8,8 @@ O antigo jogo **Domínio Global — Brasil** foi encerrado em 04/11/2026. O cód
 
 O novo projeto prioriza decisões políticas e diplomáticas significativas, além de um motor militar sofisticado na lógica e econômico nos gráficos.
 
-- [Documento fundador v0.1 (PROPOSTA)](docs/documento-fundador-v0.1.md)
+- [Documento fundador v0.1 — direção aprovada, regras em elaboração](docs/documento-fundador-v0.1.md)
+- [Cenário 001 — Crise Sul-Americana, 2030](docs/cenario-001-america-do-sul-2030.md)
 - Estado: fase de concepção; sem aplicativo novo nem deploy.
 - Próximo marco: aprovar cenário e experiência mobile antes de escrever código.
 
