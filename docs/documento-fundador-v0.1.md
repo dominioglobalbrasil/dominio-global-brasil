@@ -11,9 +11,9 @@ A complexidade estará nas consequências das decisões, não na quantidade de t
 Cada ação relevante deve ser inteligível: custo, risco, prazo, informação disponível e resultado.
 Todo conteúdo territorial e político deve ser dirigido por dados e configurável por campanha.
 
-## 2. Primeiro cenário — PROPOSTA, não decisão final
-Campanha regional alternativa, situada por volta de 2030, com geografia reconhecível mas eventos, líderes e condições iniciais fictícios.
-**Oito nações inicialmente jogáveis:** Brasil, Argentina, Chile, Bolívia, Paraguai, Uruguai, Peru e Equador.
+## 2. Primeiro cenário — DIREÇÃO APROVADA em 04/11/2026
+**Decisão aprovada:** campanha sul-americana de 2030, países reais e história alternativa, com geografia reconhecível mas eventos, líderes e condições iniciais fictícios. Detalhes do equilíbrio e da lista final de países ainda dependem de aprovação. Ver [Cenário 001](cenario-001-america-do-sul-2030.md).
+**Proposta de oito nações inicialmente jogáveis (a confirmar):** Brasil, Argentina, Chile, Bolívia, Paraguai, Uruguai, Peru e Equador.
 Outros países existem apenas como vizinhos diplomáticos/mercados não jogáveis; não precisam de simulação integral.
 **Jogadores-alvo:** 6–8 simultâneos na primeira campanha; infraestrutura preparada para múltiplas campanhas isoladas.
 **Territórios:** sugestão de 4–6 regiões estratégicas por país na primeira versão, sem cidades individuais jogáveis.
@@ -88,7 +88,7 @@ Nenhum componente de interface depende de hardcode de número de países ou dura
 **Fase F — Expansão:** novos países/partidas e novos sistemas condicionados à qualidade comprovada.
 
 ## 10. Decisões ainda abertas
-- Países reais com história alternativa (proposta acima) versus países totalmente fictícios.
+- **RESOLVIDO:** países reais, história alternativa, campanha regional sul-americana em 2030.
 - Exatamente quais oito países e quantas regiões iniciais.
 - Ritmo de turnos (12 horas proposto) e duração ideal das campanhas.
 - Objetivo das campanhas: vitória por influência/estabilidade, metas políticas, ou pontuação multi-critério.
