@@ -77,7 +77,7 @@ function fixture(){
  return {service,tables,received};
 }
 async function startApp(dbport,appport){
- const child=spawn(process.execPath,['server.mjs'],{cwd:process.cwd(),env:{...process.env,HOST:'127.0.0.1',PORT:String(appport),DG_STORAGE:'supabase',SUPABASE_URL:`http://127.0.0.1:${dbport}`,SUPABASE_SECRET_KEY:'sb_secret_test',DG_PUBLIC_TEST:'1',DG_SECURE_COOKIES:'1',DG_INVITE_CODE:'convite-de-teste-muito-seguro',TICK_MS:'5000',DG_MAX_CATCHUP:'120'},stdio:['ignore','pipe','pipe']});
+ const child=spawn(process.execPath,['server.mjs'],{cwd:process.cwd(),env:{...process.env,DG_GATEWAY_URL:'',DG_GATEWAY_TOKEN:'',HOST:'127.0.0.1',PORT:String(appport),DG_STORAGE:'supabase',SUPABASE_URL:`http://127.0.0.1:${dbport}`,SUPABASE_SECRET_KEY:'sb_secret_test',DG_PUBLIC_TEST:'1',DG_SECURE_COOKIES:'1',DG_INVITE_CODE:'convite-de-teste-muito-seguro',TICK_MS:'5000',DG_MAX_CATCHUP:'120'},stdio:['ignore','pipe','pipe']});
  let errors='';child.stderr.on('data',d=>errors+=d.toString());
  for(let i=0;i<120;i++){
   if(child.exitCode!==null)throw Error('Servidor encerrou: '+errors);
@@ -160,7 +160,7 @@ test('Cloud grátis: campanhas isoladas, estado ocupado e recuperação de senha
 
 test('Cloud grátis: configuração pública rejeita token fraco e não inicia sem chave de banco',async()=>{
  const probe=createServer(),port=await listen(probe);await close(probe);
- const child=spawn(process.execPath,['server.mjs'],{cwd:process.cwd(),env:{...process.env,DG_STORAGE:'supabase',HOST:'0.0.0.0',PORT:String(port),SUPABASE_URL:'',SUPABASE_SECRET_KEY:'',DG_PUBLIC_TEST:'1',DG_SECURE_COOKIES:'1',DG_INVITE_CODE:'convite-super-seguro'},stdio:['ignore','pipe','pipe']});
+ const child=spawn(process.execPath,['server.mjs'],{cwd:process.cwd(),env:{...process.env,DG_GATEWAY_URL:'',DG_GATEWAY_TOKEN:'',DG_STORAGE:'supabase',HOST:'0.0.0.0',PORT:String(port),SUPABASE_URL:'',SUPABASE_SECRET_KEY:'',DG_PUBLIC_TEST:'1',DG_SECURE_COOKIES:'1',DG_INVITE_CODE:'convite-super-seguro'},stdio:['ignore','pipe','pipe']});
  let error='';child.stderr.on('data',b=>error+=b.toString());
  await Promise.race([new Promise(r=>child.once('exit',r)),sleep(1000)]);
  if(child.exitCode===null)child.kill('SIGKILL');
