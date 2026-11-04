@@ -1,7 +1,15 @@
-# Repositório reservado
+# Simulador de Diplomacia e Política — Planejamento
 
-O projeto Domínio Global — Brasil foi encerrado em 04/11/2026.
+O antigo jogo **Domínio Global — Brasil** foi encerrado em 04/11/2026. O código antigo foi retirado da branch principal e seus dados operacionais removidos do Supabase.
 
-A branch principal foi limpa para planejamento de um novo simulador de diplomacia. Nenhum código de jogo ativo foi mantido nesta branch.
+## Novo projeto (em definição)
 
-Não iniciar implementação antes de aprovar escopo, protótipo e arquitetura.
+**Princípio:** poucos jogadores, qualidade profunda e expansão por configuração.
+
+O novo projeto prioriza decisões políticas e diplomáticas significativas, além de um motor militar sofisticado na lógica e econômico nos gráficos.
+
+- [Documento fundador v0.1 (PROPOSTA)](docs/documento-fundador-v0.1.md)
+- Estado: fase de concepção; sem aplicativo novo nem deploy.
+- Próximo marco: aprovar cenário e experiência mobile antes de escrever código.
+
+**Não reutilizar dados, convites, senhas ou chaves do Domínio Global.**
