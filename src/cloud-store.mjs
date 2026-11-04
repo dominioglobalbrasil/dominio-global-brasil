@@ -15,14 +15,17 @@ export class CloudDb {
   if(!url||!key)throw Error('SUPABASE_URL e SUPABASE_SECRET_KEY obrigatorios.');
   const parsed=new URL(url);
   if(parsed.protocol!=='https:' && !(parsed.protocol==='http:'&&['localhost','127.0.0.1'].includes(parsed.hostname)))throw Error('URL do Supabase deve usar HTTPS.');
-  this.root=parsed.origin+'/rest/v1';this.key=key;this.fetcher=fetcher;
+  // Um gateway restrito no Supabase evita copiar a chave de service_role para o Render.
+  this.gateway=/\/functions\/v1\/dg-private-bridge\/?$/.test(parsed.pathname);
+  this.root=this.gateway ? parsed.origin+parsed.pathname.replace(/\/$/,'')+'/rest/v1' : parsed.origin+'/rest/v1';
+  this.key=key;this.fetcher=fetcher;
  }
  async request(method,path,params={},payload=null,extra={}){
   const u=new URL(this.root+'/'+path.replace(/^\/+/,''));
   for(const [k,v] of Object.entries(params))if(v!==undefined)u.searchParams.set(k,String(v));
-  const headers={'apikey':this.key,'Accept':'application/json',...(payload!==null?{'Content-Type':'application/json'}:{}),...extra};
-  // As chaves sb_secret_ recentes NAO sao JWTs; enviar somente em apikey.
-  if(!this.key.startsWith('sb_secret_'))headers.Authorization='Bearer '+this.key;
+  const headers={'Accept':'application/json',...(payload!==null?{'Content-Type':'application/json'}:{}),...extra};
+  if(this.gateway)headers['x-dg-private-key']=this.key;
+  else {headers.apikey=this.key;if(!this.key.startsWith('sb_secret_'))headers.Authorization='Bearer '+this.key;}
   const response=await this.fetcher(u,{method,headers,body:payload===null?undefined:JSON.stringify(payload),signal:AbortSignal.timeout(12000)});
   const raw=await response.text();let data=null;try{data=raw?JSON.parse(raw):null;}catch{data=raw;}
   if(!response.ok){const error=Error(typeof data==='object'?(data.message||data.error||`Supabase ${response.status}`):`Supabase ${response.status}`);error.status=response.status;error.code=data?.code;throw error;}
@@ -42,7 +45,7 @@ export class CloudDb {
  async rpc(name,params){return await this.request('POST','rpc/'+name,{},params);}
 }
 
-export function openCloudStore({url=process.env.SUPABASE_URL,key=process.env.SUPABASE_SECRET_KEY,fetcher}={}){
+export function openCloudStore({url=process.env.DG_GATEWAY_URL||process.env.SUPABASE_URL,key=process.env.DG_GATEWAY_TOKEN||process.env.SUPABASE_SECRET_KEY,fetcher}={}){
  const sql=new CloudDb(url,key,{fetcher});
  const store={sql,
   async bootstrap(){return sql.rpc('dg_bootstrap',{p_game:createGame(),p_now:now()});},
