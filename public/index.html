@@ -7,11 +7,12 @@
   <meta name="description" content="Domínio Global — campanha Brasil: estratégia territorial multiplayer fictícia.">
   <title>DOMÍNIO GLOBAL | Campanha Brasil</title>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/interface-v15.css">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="branding"><div class="logo" aria-hidden="true"><span>✦</span></div><div class="brand-wordmark"><strong>DOMÍNIO <span>GLOBAL</span></strong><small>✦ CAMPANHA BRASIL ✦ &nbsp; ALFA 0.13</small></div></div>
+      <div class="branding"><div class="logo" aria-hidden="true"><span>✦</span></div><div class="brand-wordmark"><strong>DOMÍNIO <span>GLOBAL</span></strong><small>CAMPANHA BRASIL · ALFA 0.15</small></div></div>
       <div class="header-state"><button id="logoutButton" class="account-logout hidden" type="button" title="Sair da conta">SAIR DA CONTA</button><span class="live"><i></i><span class="live-text">PARTIDA ATIVA</span></span><span class="round-counter"><small>DIA DE CAMPANHA</small><b id="tickLabel">HORA 000</b></span><span class="desktop-only scenario-label">UNIVERSO FICTÍCIO</span></div>
     </header>
     <div class="resourcebar" id="resbar" aria-label="Reservas de recursos"><span class="hint">Escolha um estado para começar.</span></div>
@@ -36,12 +37,12 @@
         <header class="page-header"><div class="page-heading"><span class="eyebrow" id="pageEyebrow">BRASIL / TEATRO DE OPERAÇÕES</span><h1 id="pageTitle">Mapa estratégico</h1><p id="pageSummary">Toque em um território para abrir sua janela de comando.</p></div><span class="page-meta" id="pageMeta">CAMPANHA BRASIL</span></header>
         <section id="mapView" class="map-view" aria-label="Centro de operações no mapa do Brasil">
           <div class="operation-bar">
-            <div><div class="op-eyebrow">◉ CAMPANHA EM ANDAMENTO &nbsp; / &nbsp; TEATRO 001</div><h2>FRENTE BRASIL <span>▰</span></h2><p>Controle territorial em tempo real · Selecione um estado para comandar</p></div>
+            <div><div class="op-eyebrow">◉ CAMPANHA EM ANDAMENTO &nbsp; / &nbsp; TEATRO 001</div><h2>FRENTE BRASIL <span>▰</span></h2><p>27 estados · 171 cidades estratégicas · Campanha multiplayer</p></div>
             <div class="op-chips"><span class="op-chip"><b>27</b> UNIDADES FEDERATIVAS</span><span class="op-chip active" id="operationCount">0 ORDENS EM TRÂNSITO</span></div>
           </div>
           <div class="battlefield-layout">
-            <div class="map-board">
-              <div class="map-toolbar"><div class="map-toolbar-title"><span class="beacon"></span> REDE TÁTICA / BRASIL <span class="toolbar-sub">◦ MAPA OPERACIONAL</span></div><div class="map-tools"><label class="sr-only" for="quickState">Localizar um estado</label><select id="quickState"><option value="">Localizar território</option></select><button id="sectorToggle" type="button" aria-pressed="true" aria-label="Mostrar ou ocultar cidades estratégicas" title="Mostrar cidades estratégicas">★ Centros</button><button id="zoomOut" type="button" aria-label="Reduzir zoom">−</button><button id="zoomIn" type="button" aria-label="Ampliar zoom">+</button></div></div>
+            <div class="map-board" id="mapBoard">
+              <div class="map-toolbar"><div class="map-toolbar-title"><span class="beacon"></span> REDE TÁTICA / BRASIL <span class="toolbar-sub">◦ MAPA OPERACIONAL</span></div><div class="map-tools"><label class="sr-only" for="quickState">Localizar um estado</label><select id="quickState"><option value="">Localizar território</option></select><button id="sectorToggle" type="button" aria-pressed="true" aria-label="Mostrar ou ocultar cidades estratégicas" title="Mostrar cidades estratégicas">★ Centros</button><button id="zoomOut" type="button" aria-label="Reduzir zoom">−</button><button id="zoomIn" type="button" aria-label="Ampliar zoom">+</button><button id="mapExpand" type="button" aria-label="Expandir mapa" aria-pressed="false" title="Expandir mapa">⛶</button></div></div>
               <div id="mapFrame" class="map-frame">
                 <svg id="worldMap" viewBox="0 0 1050 680" role="img" aria-label="Mapa interativo do Brasil, com 27 estados e até 171 cidades estratégicas reveladas por zoom estadual">
                   <defs>
@@ -72,6 +73,7 @@
               <div class="tactical-content" id="tacticalContent"><p>Selecione um estado no mapa para visualizar seu comando.</p></div>
             </aside>
           </div>
+          <div id="selectionBanner" class="selection-banner" aria-live="polite"><div class="selection-banner-icon">⌖</div><div class="selection-banner-copy"><span id="selectionOverline">SETOR EM FOCO</span><strong id="selectionName">Selecione um território</strong><small id="selectionDetails">Toque em um estado no mapa ou use a busca acima.</small></div><button id="selectionInspect" type="button" aria-label="Ver detalhes do estado selecionado">DETALHES <span aria-hidden="true">→</span></button></div>
           <div class="command-dock" aria-label="Comandos táticos rápidos">
             <button type="button" class="command-btn move" data-quick="move"><span class="command-icon">➜</span><span><small>ORDEM DE</small><strong>MOVER / ATACAR</strong></span></button>
             <button type="button" class="command-btn recruit" data-quick="recruit"><span class="command-icon">♟</span><span><small>CENTRO DE</small><strong>RECRUTAMENTO</strong></span></button>
@@ -85,7 +87,7 @@
     </div>
     <nav class="mobile-nav" aria-label="Navegação rápida">
       <button data-page="map" class="mobile-nav-btn active"><span>◈</span>Mapa</button>
-      <button data-page="military" class="mobile-nav-btn"><span>⚔</span>Exército</button>
+      <button data-page="military" class="mobile-nav-btn"><span>⚔</span>Forças</button>
       <button data-page="economy" class="mobile-nav-btn"><span>▥</span>Economia</button>
       <button data-page="construction" class="mobile-nav-btn"><span>▣</span>Obras</button>
       <button id="moreButton" class="mobile-nav-btn" aria-expanded="false" aria-controls="moreMenu"><span>☷</span>Mais</button>
@@ -112,10 +114,10 @@
   <dialog id="recoveryDialog" class="game-dialog recovery-dialog" aria-labelledby="recoveryDialogTitle"><div class="dialog-shell"><header class="dialog-header"><div><div class="eyebrow">SEGURANÇA DA CONTA</div><h2 id="recoveryDialogTitle">Guarde seu código de recuperação</h2></div></header><div class="dialog-body"><p>Este código aparece uma única vez. Sem ele, a recuperação local da senha não estará disponível.</p><code id="recoveryCodeValue" class="recovery-code"></code><button id="copyRecoveryCode" type="button" class="secondary-btn">COPIAR CÓDIGO</button><button id="recoveryAcknowledged" type="button" class="primary-btn">JÁ GUARDEI O CÓDIGO</button></div></div></dialog>
   <div id="joinModal" class="modal-cover hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <section class="join-dialog"><div class="dialog-mark">✦</div><p class="eyebrow">DOMÍNIO GLOBAL / CAMPANHA BRASIL</p><h2 id="modalTitle">Escolha o estado que vai comandar.</h2><p>Uma campanha fictícia pela conquista do Brasil. Assuma uma das 27 unidades federativas para começar.</p>
-      <div class="match-lobby"><label for="matchPicker">SALA DA CAMPANHA</label><select id="matchPicker" aria-label="Escolher campanha de testes"></select><div class="match-create"><input id="newMatchName" maxlength="38" placeholder="Nome de uma nova sala" autocomplete="off"><button type="button" id="createMatchButton" class="secondary-btn">CRIAR SALA</button></div><small class="dialog-notice">Salas de teste separadas; cada conta pode assumir um estado em cada campanha.</small></div>
+      <div class="match-lobby"><label for="matchPicker">SALA DA CAMPANHA</label><select id="matchPicker" aria-label="Escolher campanha de testes"></select><div class="match-create"><input id="newMatchName" maxlength="38" placeholder="Nome de uma nova sala" autocomplete="off"><button type="button" id="createMatchButton" class="secondary-btn">CRIAR SALA</button></div><small class="dialog-notice">Campanhas separadas; cada conta pode assumir um estado em cada campanha.</small></div>
       <label for="commanderName">COMANDANTE VINCULADO À CONTA</label><input id="commanderName" maxlength="24" placeholder="Nome público da sua conta" disabled>
       <label for="stateSearch">BUSCAR ESTADO</label><input id="stateSearch" type="search" placeholder="Ex.: Mato Grosso do Sul ou MS" autocomplete="off">
-      <div id="factionPicker" class="faction-picker"></div><button id="joinButton" type="button" class="primary-btn join-btn" disabled>INICIAR CAMPANHA <span>➜</span></button><small class="dialog-notice">Contas locais com sessão protegida. Sem publicação em produção.</small></section>
+      <div id="factionPicker" class="faction-picker"></div><button id="joinButton" type="button" class="primary-btn join-btn" disabled>INICIAR CAMPANHA <span>➜</span></button><small class="dialog-notice">Campanha de testes online com contas e progresso salvos no servidor.</small></section>
   </div>
   <dialog id="gameDialog" class="game-dialog" aria-labelledby="dialogTitle">
     <div class="dialog-shell"><header class="dialog-header"><button type="button" id="dialogBack" class="icon-btn hidden" aria-label="Voltar para os detalhes do estado">←</button><div><div id="dialogEyebrow" class="eyebrow">CENTRAL DE COMANDO</div><h2 id="dialogTitle">Detalhes</h2></div><button id="dialogClose" type="button" class="icon-btn close-btn" aria-label="Fechar janela">✕</button></header><div class="dialog-body" id="dialogBody"></div></div>
