@@ -10,7 +10,7 @@ import {DatabaseSync} from 'node:sqlite';
 import {createGame} from '../src/engine.mjs';
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
 async function port(){return await new Promise((resolve,reject)=>{const s=net.createServer();s.once('error',reject);s.listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(()=>resolve(p));});});}
-async function start(p,db,data){const child=spawn('node',['server.mjs'],{cwd:process.cwd(),env:{...process.env,PORT:String(p),HOST:'127.0.0.1',DB_FILE:db,DATA_FILE:data,TICK_MS:'300000',DG_LEGACY_GUEST:'0'},stdio:'ignore'});for(let i=0;i<100;i++){if(child.exitCode!==null)throw Error('Falha ao iniciar servidor');try{const r=await fetch(`http://127.0.0.1:${p}/api/health`);if(r.ok)return child;}catch{}await pause(50);}child.kill();throw Error('Servidor não iniciou');}
+async function start(p,db,data){const child=spawn('node',['server.mjs'],{cwd:process.cwd(),env:{...process.env,PORT:String(p),HOST:'127.0.0.1',DB_FILE:db,DATA_FILE:data,TICK_MS:'300000',DG_LEGACY_GUEST:'0',DG_PUBLIC_TEST:'0',DG_STORAGE:'sqlite'},stdio:'ignore'});for(let i=0;i<100;i++){if(child.exitCode!==null)throw Error('Falha ao iniciar servidor');try{const r=await fetch(`http://127.0.0.1:${p}/api/health`);if(r.ok)return child;}catch{}await pause(50);}child.kill();throw Error('Servidor não iniciou');}
 async function stop(child){child.kill('SIGTERM');await new Promise(resolve=>child.once('exit',resolve));}
 async function fixture(callback,{legacy=null}={}){const dir=await mkdtemp(join(tmpdir(),'dg13-')),db=join(dir,'game.sqlite'),data=join(dir,'legacy.json'),p=await port();let child=null;
  try{if(legacy)await writeFile(data,JSON.stringify(legacy));child=await start(p,db,data);
