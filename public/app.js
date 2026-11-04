@@ -116,7 +116,7 @@ function update(data) {
   $('#tickLabel').textContent = 'HORA ' + String(data.tick).padStart(3, '0');
   $('#joinModal').classList.toggle('hidden', Boolean(data.me) || (authMode && !data.account));
   document.title='Domínio Global • '+(data.matchName||'Campanha Brasil');
-  renderResources(); renderIdentity(); renderPicker(); renderMap(); renderTactical(); renderTicker(); renderPage();
+  renderResources(); renderIdentity(); renderPicker(); renderMap(); renderTactical(); renderSelectionBanner(); renderTicker(); renderPage();
   // Não reconstruímos formulários enquanto o jogador preenche uma ordem.
   if (dialogState && ['province','faction'].includes(dialogState.kind)) renderDialog();
 }
@@ -156,6 +156,7 @@ function readPage() {
 }
 function navigate(page) {
   closeMoreMenu();
+  if(page!=='map'&&document.body.classList.contains('map-fullscreen'))toggleExpandedMap(false);
   if (!Object.hasOwn(PAGES,page)) return;
   if (readPage() !== page || !location.hash) location.hash = '/'+page;
   else renderPage();
@@ -584,6 +585,31 @@ function renderTactical() {
   const hint=elem('p','tactical-note',friendly?'Emita ordens nas janelas de comando. A simulação processa as ações no servidor.':'Para atacar, selecione primeiro uma guarnição própria em um estado vizinho.');
   host.append(hint);
 }
+function renderSelectionBanner(){
+  const bar=$('#selectionBanner');if(!bar||!state)return;
+  const p=province(selectedProvince||state.me?.nationId);
+  if(!p){
+    $('#selectionOverline').textContent='AGUARDANDO COMANDO';
+    $('#selectionName').textContent='Selecione um território';
+    $('#selectionDetails').textContent='Toque no mapa ou escolha um estado no seletor.';
+    bar.classList.remove('friendly','hostile');
+    $('#selectionInspect').disabled=true;return;
+  }
+  const f=faction(p.ownerId),controlled=own(p);
+  $('#selectionOverline').textContent=controlled?'TERRITÓRIO SOB SEU COMANDO':'TERRITÓRIO EM OBSERVAÇÃO';
+  $('#selectionName').textContent=p.name+' · '+p.sigla.toUpperCase();
+  $('#selectionDetails').textContent=(f?.name||'Controle desconhecido')+' · '+(state.sectors?.filter(c=>c.provinceId===p.id).length||0)+' cidades estratégicas';
+  bar.classList.toggle('friendly',controlled);bar.classList.toggle('hostile',!controlled);
+  $('#selectionInspect').disabled=false;
+}
+function toggleExpandedMap(force){
+  const expanded=typeof force==='boolean'?force:!document.body.classList.contains('map-fullscreen');
+  document.body.classList.toggle('map-fullscreen',expanded);
+  $('#mapExpand').setAttribute('aria-pressed',String(expanded));
+  $('#mapExpand').setAttribute('aria-label',expanded?'Fechar mapa expandido':'Expandir mapa');
+  $('#mapExpand').title=expanded?'Fechar mapa':'Expandir mapa';
+  $('#mapExpand').textContent=expanded?'✕':'⛶';
+}
 function renderTicker() {
   const host=$('#tickerEvents'); if(!host||!state)return;
   host.replaceChildren();
@@ -608,7 +634,7 @@ function centerOnProvince(id,behavior='smooth') {
   const top=Math.max(0,rect.height*(p.y/680)-frame.clientHeight/2);
   frame.scrollTo({left,top,behavior});
 }
-function openProvince(id) { selectedProvince=id;renderMap();renderTactical();centerOnProvince(id);showDialog('province',id); }
+function openProvince(id) { selectedProvince=id;renderMap();renderTactical();renderSelectionBanner();centerOnProvince(id);showDialog('province',id); }
 function showDialog(kind,id,fromProvince=false) {
   if (!state) return;
   dialogState = { kind, id, fromProvince };
@@ -983,7 +1009,7 @@ $('#matchPicker').addEventListener('change',async(e)=>{
 });
 $('#createMatchButton').addEventListener('click',async()=>{
  const button=$('#createMatchButton'),name=$('#newMatchName').value.trim();button.disabled=true;
- try{const created=await post('/api/matches',{name});matchId=created.id;localStorage.setItem('dg-match-id',matchId);token=authMode?'AUTH_COOKIE':null;chosenFaction=null;await fetchMatches();await fetchState();notice('Sala local criada. Escolha seu estado.');}
+ try{const created=await post('/api/matches',{name});matchId=created.id;localStorage.setItem('dg-match-id',matchId);token=authMode?'AUTH_COOKIE':null;chosenFaction=null;await fetchMatches();await fetchState();notice('Campanha criada no servidor. Escolha seu estado.');}
  catch(e){notice(e.message,true);}finally{button.disabled=false;}
 });
 $('#joinButton').addEventListener('click',async()=>{
@@ -1001,13 +1027,15 @@ $('#zoomOut').addEventListener('click',()=>setZoom(-.5));
 $('#sectorToggle').addEventListener('click',()=>{showCenters=!showCenters;renderMap();});
 for (const btn of document.querySelectorAll('[data-quick]')) btn.addEventListener('click',()=>commandQuick(btn.dataset.quick));
 $('#mobileTacticalButton').addEventListener('click',()=>commandQuick('inspect'));
+$('#selectionInspect').addEventListener('click',()=>commandQuick('inspect'));
+$('#mapExpand').addEventListener('click',()=>toggleExpandedMap());
 $('#dialogClose').addEventListener('click',closeDialog);
 $('#dialogBack').addEventListener('click',()=>{if(dialogState?.fromProvince==='sector')showDialog('sector',dialogState.id);else if(dialogState?.fromProvince)showDialog('province',dialogState.id);});
 $('#gameDialog').addEventListener('close',()=>{dialogState=null;});
 window.addEventListener('hashchange',()=>{closeMoreMenu();closeDialog();renderPage();});
-window.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeMoreMenu();});
+window.addEventListener('keydown',ev=>{if(ev.key==='Escape'){closeMoreMenu();if(document.body.classList.contains('map-fullscreen'))toggleExpandedMap(false);}});
 window.addEventListener('click',ev=>{if(!ev.target.closest('#moreMenu,#moreButton'))closeMoreMenu();});
-// Contas locais com autenticação real; o modo de testes antigo funciona sem alterar o motor.
+// Contas com autenticação e sessões persistentes no backend.
 function setAuthPage(mode){
  authPage=mode;const titles={login:['Entre na sua conta','ENTRAR NA CAMPANHA'],register:['Crie seu comandante','CRIAR CONTA'],recover:['Recuperar acesso','REDEFINIR SENHA']};
  $('#authTitle').textContent=titles[mode][0];$('#authSubmit').textContent=titles[mode][1];
