@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071018">
+  <meta name="description" content="Domínio Global — campanha Brasil: estratégia territorial multiplayer fictícia.">
+  <title>DOMÍNIO GLOBAL | Campanha Brasil</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="branding"><div class="logo" aria-hidden="true"><span>✦</span></div><div class="brand-wordmark"><strong>DOMÍNIO <span>GLOBAL</span></strong><small>✦ CAMPANHA BRASIL ✦ &nbsp; ALFA 0.13</small></div></div>
+      <div class="header-state"><button id="logoutButton" class="account-logout hidden" type="button" title="Sair da conta">SAIR DA CONTA</button><span class="live"><i></i><span class="live-text">PARTIDA ATIVA</span></span><span class="round-counter"><small>DIA DE CAMPANHA</small><b id="tickLabel">HORA 000</b></span><span class="desktop-only scenario-label">UNIVERSO FICTÍCIO</span></div>
+    </header>
+    <div class="resourcebar" id="resbar" aria-label="Reservas de recursos"><span class="hint">Escolha um estado para começar.</span></div>
+    <div class="app-body">
+      <aside class="sidebar" aria-label="Menu principal">
+        <div class="section-kicker">◈ CENTRO DE COMANDO <i>01</i></div>
+        <div class="nation-card"><div id="nationFlag" class="nation-emblem">◇</div><div><small>SEU ESTADO</small><strong id="nationName">Sem comando</strong><span id="nationCommander">Escolha uma unidade federativa</span></div></div>
+        <nav class="nav" id="primaryNav" aria-label="Seções do jogo">
+          <button data-page="map" class="nav-btn active"><span class="nav-icon">◈</span> Mapa estratégico</button>
+          <button data-page="military" class="nav-btn"><span class="nav-icon">⚔</span> Exército e operações</button>
+          <button data-page="centers" class="nav-btn"><span class="nav-icon">★</span> Cidades estratégicas</button>
+          <button data-page="economy" class="nav-btn"><span class="nav-icon">▥</span> Economia</button>
+          <button data-page="construction" class="nav-btn"><span class="nav-icon">▣</span> Construções</button>
+          <button data-page="diplomacy" class="nav-btn"><span class="nav-icon">◎</span> Diplomacia</button>
+          <button data-page="intelligence" class="nav-btn"><span class="nav-icon">◉</span> Inteligência</button>
+          <button data-page="news" class="nav-btn"><span class="nav-icon">▤</span> Jornal da guerra</button>
+          <button data-page="ranking" class="nav-btn"><span class="nav-icon">★</span> Classificação</button>
+        </nav>
+        <div class="sidebar-note"><div class="sidebar-art"></div><div class="sidebar-status"><span class="status-dot"></span> SISTEMAS OPERACIONAIS</div><small>Motor de simulação conectado. As ordens são calculadas pelo servidor.</small></div>
+      </aside>
+      <main id="mainArea" class="main-area">
+        <header class="page-header"><div class="page-heading"><span class="eyebrow" id="pageEyebrow">BRASIL / TEATRO DE OPERAÇÕES</span><h1 id="pageTitle">Mapa estratégico</h1><p id="pageSummary">Toque em um território para abrir sua janela de comando.</p></div><span class="page-meta" id="pageMeta">CAMPANHA BRASIL</span></header>
+        <section id="mapView" class="map-view" aria-label="Centro de operações no mapa do Brasil">
+          <div class="operation-bar">
+            <div><div class="op-eyebrow">◉ CAMPANHA EM ANDAMENTO &nbsp; / &nbsp; TEATRO 001</div><h2>FRENTE BRASIL <span>▰</span></h2><p>Controle territorial em tempo real · Selecione um estado para comandar</p></div>
+            <div class="op-chips"><span class="op-chip"><b>27</b> UNIDADES FEDERATIVAS</span><span class="op-chip active" id="operationCount">0 ORDENS EM TRÂNSITO</span></div>
+          </div>
+          <div class="battlefield-layout">
+            <div class="map-board">
+              <div class="map-toolbar"><div class="map-toolbar-title"><span class="beacon"></span> REDE TÁTICA / BRASIL <span class="toolbar-sub">◦ MAPA OPERACIONAL</span></div><div class="map-tools"><label class="sr-only" for="quickState">Localizar um estado</label><select id="quickState"><option value="">Localizar território</option></select><button id="sectorToggle" type="button" aria-pressed="true" aria-label="Mostrar ou ocultar cidades estratégicas" title="Mostrar cidades estratégicas">★ Centros</button><button id="zoomOut" type="button" aria-label="Reduzir zoom">−</button><button id="zoomIn" type="button" aria-label="Ampliar zoom">+</button></div></div>
+              <div id="mapFrame" class="map-frame">
+                <svg id="worldMap" viewBox="0 0 1050 680" role="img" aria-label="Mapa interativo do Brasil, com 27 estados e até 171 cidades estratégicas reveladas por zoom estadual">
+                  <defs>
+                    <radialGradient id="sea"><stop offset="0" stop-color="#19384a"/><stop offset=".65" stop-color="#0b2430"/><stop offset="1" stop-color="#07131e"/></radialGradient>
+                    <radialGradient id="landLight"><stop offset="0" stop-color="#b9d5a9" stop-opacity=".17"/><stop offset="1" stop-color="#081826" stop-opacity=".04"/></radialGradient>
+                    <pattern id="gridpattern" width="31" height="31" patternUnits="userSpaceOnUse"><path d="M31 0H0V31" fill="none" stroke="#62b6bb" stroke-opacity=".08" stroke-width="1"/><path d="M0 0L4 0M0 0L0 4" stroke="#9ee6e0" stroke-opacity=".1" stroke-width="1"/></pattern>
+                    <pattern id="terrainLines" width="43" height="43" patternUnits="userSpaceOnUse"><path d="M0 22Q14 7 28 22T56 22" fill="none" stroke="#d8f5d4" stroke-opacity=".065" stroke-width="1"/><path d="M0 34Q14 19 28 34T56 34" fill="none" stroke="#d8f5d4" stroke-opacity=".05" stroke-width="1"/></pattern>
+                    <mask id="land-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1050" height="680"><rect width="1050" height="680" fill="black"/><g id="landMaskPaths"></g></mask>
+                    <filter id="softshadow" x="-35%" y="-35%" width="170%" height="170%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000b13" flood-opacity=".87"/></filter>
+                    <filter id="neonglow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  </defs>
+                  <rect width="1050" height="680" fill="url(#sea)"/>
+                  <rect width="1050" height="680" fill="url(#gridpattern)"/>
+                  <path d="M0 127H1050M0 340H1050M0 550H1050M180 0V680M525 0V680M865 0V680" stroke="#79c7bc" stroke-width="1" stroke-dasharray="5 15" opacity=".10" fill="none"/>
+                  <text x="762" y="603" class="sea-label">O C E A N O</text><text x="762" y="624" class="sea-label">A T L Â N T I C O</text>
+                  <g id="provincePaths" filter="url(#softshadow)"></g><g id="terrainOverlay" pointer-events="none"></g><image href="/assets/terrain-relief.webp" x="0" y="0" width="1050" height="680" mask="url(#land-mask)" opacity=".65" pointer-events="none"/><g id="provinceLabels"></g><g id="municipalityOutlines" pointer-events="none"></g><g id="sectorMarkers"></g><g id="municipalityMarkers"></g><g id="movements"></g><g id="targetSelection"></g>
+                  <g transform="translate(976 73)" class="compass"><path d="M0 -24L6 0L0 24L-6 0Z" fill="none" stroke="#b2cfcc" stroke-width="1.5"/><circle r="13" fill="none" stroke="#87b2b2" opacity=".7"/><text y="-33" text-anchor="middle" fill="#c1d4cd" font-size="12">N</text></g>
+                  <g transform="translate(28 640)" class="map-watermark"><text x="0" y="0" font-size="11" fill="#87c8c3" letter-spacing="3">DOMÍNIO GLOBAL // SATÉLITE TÁTICO</text></g>
+                </svg>
+                <div class="map-legend" id="mapLegend"></div>
+                <div class="map-coordinates">SISTEMA CARTOGRÁFICO // 001<br>MONITORAMENTO ATIVO <span>●</span></div>
+                <button id="mobileTacticalButton" type="button" class="mobile-state-focus"><span>◈</span> ABRIR COMANDO TÁTICO</button>
+              </div>
+              <div class="map-footer"><span><i class="beacon"></i> MAPA SINCRONIZADO COM O SERVIDOR</span><span class="map-footer-right">ARRASTE / CLIQUE NOS ESTADOS &nbsp; ◈ &nbsp; ESCALA ESTRATÉGICA</span></div>
+            </div>
+            <aside class="tactical-panel" id="tacticalPanel" aria-label="Painel tático do estado selecionado">
+              <header class="tactical-head"><span>◈ COMANDO TERRITORIAL</span><span class="tactical-number">SETOR 001</span></header>
+              <div class="tactical-content" id="tacticalContent"><p>Selecione um estado no mapa para visualizar seu comando.</p></div>
+            </aside>
+          </div>
+          <div class="command-dock" aria-label="Comandos táticos rápidos">
+            <button type="button" class="command-btn move" data-quick="move"><span class="command-icon">➜</span><span><small>ORDEM DE</small><strong>MOVER / ATACAR</strong></span></button>
+            <button type="button" class="command-btn recruit" data-quick="recruit"><span class="command-icon">♟</span><span><small>CENTRO DE</small><strong>RECRUTAMENTO</strong></span></button>
+            <button type="button" class="command-btn build" data-quick="build"><span class="command-icon">▥</span><span><small>OBRAS E</small><strong>INDÚSTRIA</strong></span></button>
+            <button type="button" class="command-btn inspect" data-quick="inspect"><span class="command-icon">◇</span><span><small>DETALHES DO</small><strong>TERRITÓRIO</strong></span></button>
+          </div>
+          <div class="war-ticker"><div class="ticker-heading"><span class="broadcast">◉</span> <strong>REDE DE COMANDO</strong> <small>EVENTOS AO VIVO</small></div><div class="ticker-events" id="tickerEvents"><span>Iniciando monitoramento...</span></div><button class="ticker-more" type="button" data-page="news">VER JORNAL »</button></div>
+        </section>
+        <section id="moduleView" class="module-view hidden" aria-label="Área de gestão"></section>
+      </main>
+    </div>
+    <nav class="mobile-nav" aria-label="Navegação rápida">
+      <button data-page="map" class="mobile-nav-btn active"><span>◈</span>Mapa</button>
+      <button data-page="military" class="mobile-nav-btn"><span>⚔</span>Exército</button>
+      <button data-page="economy" class="mobile-nav-btn"><span>▥</span>Economia</button>
+      <button data-page="construction" class="mobile-nav-btn"><span>▣</span>Obras</button>
+      <button id="moreButton" class="mobile-nav-btn" aria-expanded="false" aria-controls="moreMenu"><span>☷</span>Mais</button>
+    </nav>
+    <div id="moreMenu" class="more-menu hidden" role="menu" aria-label="Mais seções">
+      <button role="menuitem" data-page="centers">★ Cidades estratégicas</button><button role="menuitem" data-page="diplomacy">◎ Diplomacia</button><button role="menuitem" data-page="intelligence">◉ Inteligência</button><button role="menuitem" data-page="news">▤ Jornal da guerra</button><button role="menuitem" data-page="ranking">★ Classificação</button>
+    </div>
+  </div>
+  <div id="authModal" class="modal-cover hidden" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <section class="join-dialog auth-dialog"><div class="dialog-mark">✦</div><p class="eyebrow">DOMÍNIO GLOBAL / ACESSO AO COMANDO</p>
+      <h2 id="authTitle">Entre na sua conta</h2><p id="authSubtitle">Sua conta mantém seus estados e campanhas disponíveis mesmo após sair do jogo.</p>
+      <div class="auth-tabs"><button type="button" class="active" data-auth-mode="login">ENTRAR</button><button type="button" data-auth-mode="register">CRIAR CONTA</button><button type="button" data-auth-mode="recover">RECUPERAR</button></div>
+      <form id="authForm" autocomplete="on">
+        <label for="authUsername">USUÁRIO</label><input id="authUsername" name="username" minlength="3" maxlength="24" pattern="[a-zA-Z0-9_]+" autocomplete="username" required placeholder="seu_usuario">
+        <div id="authDisplayNameField" class="hidden"><label for="authDisplayName">NOME DO COMANDANTE</label><input id="authDisplayName" name="displayName" maxlength="24" autocomplete="nickname" placeholder="Nome visível no jogo"></div>
+        <div id="authInviteField" class="hidden"><label for="authInviteCode">CONVITE DE HOMOLOGAÇÃO</label><input id="authInviteCode" name="inviteCode" maxlength="128" autocomplete="off" placeholder="Código enviado pela equipe de testes"></div>
+        <label for="authPassword" id="authPasswordLabel">SENHA</label><input id="authPassword" name="password" type="password" minlength="10" maxlength="128" autocomplete="current-password" required placeholder="No mínimo 10 caracteres">
+        <div id="authRecoveryField" class="hidden"><label for="authRecovery">CÓDIGO DE RECUPERAÇÃO</label><input id="authRecovery" name="code" autocomplete="off" maxlength="64" placeholder="Código salvo ao criar a conta"></div>
+        <button id="authSubmit" type="submit" class="primary-btn join-btn">ENTRAR NA CAMPANHA <span>➜</span></button>
+      </form>
+      <small class="dialog-notice">Ambiente de testes: não reutilize senhas de outros serviços. Guarde seu código de recuperação.</small>
+    </section>
+  </div>
+  <dialog id="recoveryDialog" class="game-dialog recovery-dialog" aria-labelledby="recoveryDialogTitle"><div class="dialog-shell"><header class="dialog-header"><div><div class="eyebrow">SEGURANÇA DA CONTA</div><h2 id="recoveryDialogTitle">Guarde seu código de recuperação</h2></div></header><div class="dialog-body"><p>Este código aparece uma única vez. Sem ele, a recuperação local da senha não estará disponível.</p><code id="recoveryCodeValue" class="recovery-code"></code><button id="copyRecoveryCode" type="button" class="secondary-btn">COPIAR CÓDIGO</button><button id="recoveryAcknowledged" type="button" class="primary-btn">JÁ GUARDEI O CÓDIGO</button></div></div></dialog>
+  <div id="joinModal" class="modal-cover hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <section class="join-dialog"><div class="dialog-mark">✦</div><p class="eyebrow">DOMÍNIO GLOBAL / CAMPANHA BRASIL</p><h2 id="modalTitle">Escolha o estado que vai comandar.</h2><p>Uma campanha fictícia pela conquista do Brasil. Assuma uma das 27 unidades federativas para começar.</p>
+      <div class="match-lobby"><label for="matchPicker">SALA DA CAMPANHA</label><select id="matchPicker" aria-label="Escolher campanha de testes"></select><div class="match-create"><input id="newMatchName" maxlength="38" placeholder="Nome de uma nova sala" autocomplete="off"><button type="button" id="createMatchButton" class="secondary-btn">CRIAR SALA</button></div><small class="dialog-notice">Salas de teste separadas; cada conta pode assumir um estado em cada campanha.</small></div>
+      <label for="commanderName">COMANDANTE VINCULADO À CONTA</label><input id="commanderName" maxlength="24" placeholder="Nome público da sua conta" disabled>
+      <label for="stateSearch">BUSCAR ESTADO</label><input id="stateSearch" type="search" placeholder="Ex.: Mato Grosso do Sul ou MS" autocomplete="off">
+      <div id="factionPicker" class="faction-picker"></div><button id="joinButton" type="button" class="primary-btn join-btn" disabled>INICIAR CAMPANHA <span>➜</span></button><small class="dialog-notice">Contas locais com sessão protegida. Sem publicação em produção.</small></section>
+  </div>
+  <dialog id="gameDialog" class="game-dialog" aria-labelledby="dialogTitle">
+    <div class="dialog-shell"><header class="dialog-header"><button type="button" id="dialogBack" class="icon-btn hidden" aria-label="Voltar para os detalhes do estado">←</button><div><div id="dialogEyebrow" class="eyebrow">CENTRAL DE COMANDO</div><h2 id="dialogTitle">Detalhes</h2></div><button id="dialogClose" type="button" class="icon-btn close-btn" aria-label="Fechar janela">✕</button></header><div class="dialog-body" id="dialogBody"></div></div>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite" class="toast hidden"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

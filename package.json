@@ -1,0 +1,19 @@
+{
+  "name": "dominio-global-brasil-mvp",
+  "version": "0.14.0",
+  "private": true,
+  "type": "module",
+  "description": "Domínio Global: 27 UFs, 171 cidades estratégicas, guerra urbana e contas, PostgreSQL (Supabase) e hospedagem gratuita no Render",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "python tests/browser_centers_smoke.py",
+    "test:browser:support": "python tests/browser_support_smoke.py",
+    "test:browser:urban": "python tests/browser_urban_lobby_smoke.py",
+    "test:browser:auth-bridge": "python tests/browser_auth_bridge_smoke.py",
+    "backup": "node scripts/backup-sqlite.mjs"
+  },
+  "engines": {
+    "node": ">=22.16"
+  }
+}
