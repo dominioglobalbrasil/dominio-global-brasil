@@ -13,7 +13,9 @@ O novo projeto prioriza decisões políticas e diplomáticas significativas, al�
 - [Regras do ciclo de governo e turno — v0.1](docs/ciclo-de-turno-v0.1.md)
 - [Economia, comércio, custos de guerra e condições de vitória — v0.1](docs/economia-e-vitoria-v0.1.md)
 - [Motor militar — especificação de design v0.1](docs/motor-militar-v0.1.md)
-- Estado: fase de concepção; sem aplicativo novo nem deploy.
+- **Prévia visual mobile publicada (sem backend):** https://crise-sul-americana-2030.vercel.app/ 
+- Código: [site/](site/) — HTML, CSS e JavaScript, modo demonstração.
+- Estado: protótipo de interface publicado; motor de economia, diplomacia e guerra ainda não implementado.
 - Próximo marco: aprovar cenário e experiência mobile antes de escrever código.
 
 **Não reutilizar dados, convites, senhas ou chaves do Domínio Global.**
