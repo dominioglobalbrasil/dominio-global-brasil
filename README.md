@@ -17,10 +17,11 @@ ESTATUM combina decisões políticas e diplomáticas com **guerra moderna**: dro
 - [Motor militar — especificação de design v0.1](docs/motor-militar-v0.1.md)
 - [ESTATUM — diretriz de guerra moderna e drones v0.1](docs/estatum-guerra-moderna-e-drones-v0.1.md)
 - [Decisões oficiais — opção C aprovada](docs/decisoes-oficiais.md)
-- [Mapa e divisão territorial — alternativas para Decisão 02](docs/mapa-e-divisao-territorial-v0.1.md)
+- [Mapa e divisão territorial — modelo C aprovado](docs/mapa-e-divisao-territorial-v0.1.md)
+- [Divisão das 42 regiões e regras de conquista — proposta detalhada v0.2](docs/territorios-e-conquista-v0.2.md)
 - **Prévia visual mobile publicada (sem backend):** https://crise-sul-americana-2030.vercel.app/ 
 - Código: [site/](site/) — HTML, CSS e JavaScript, modo demonstração.
 - Estado: protótipo de interface publicado; motor de economia, diplomacia e guerra ainda não implementado.
-- Próximo marco: aprovar cenário e experiência mobile antes de escrever código.
+- Próximo marco: validar a divisão cartográfica, os pontos estratégicos e as regras de controle/ocupação antes de implementar o motor de guerra.
 
 **Não reutilizar dados, convites, senhas ou chaves do Domínio Global.**
