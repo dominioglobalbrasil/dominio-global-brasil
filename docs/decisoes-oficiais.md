@@ -10,7 +10,7 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Política e economia:** ciclos nacionais de **12 horas**, com fechamento, resolução e relatório em horários definidos por campanha.
 - **Diplomacia:** conversas, propostas, contrapropostas e acordos podem ocorrer continuamente; obrigações/efeitos com impacto no estado serão aplicados com regras e horário explícitos, evitando paradoxos em turnos.
 - **Operações militares:** processamento em ciclos **mais curtos que os governamentais**, com evolução entre os fechamentos econômicos, sem exigir que o jogador fique conectado continuamente.
-- **Periodicidade militar EXATA:** **NÃO DEFINIDA**; 30 minutos é o exemplo/recomendação inicial apresentado, sujeito a validação de carga, jogabilidade e disponibilidade de jogadores.
+- **Periodicidade militar EXATA: 30 minutos**, aprovada em 07/11/2026 pela Decisão 05. Em 12 horas há 24 microciclos militares; configurações de horários, corte de ordens e balanceamento seguem detalhamento técnico.
 - **Prevenção de sobrecarga:** ordens persistentes, regras de engajamento e prioridades de logística; ausência do jogador não força ações arbitrárias.
 - **Consistência:** motor econômico e militar isolados em frequência, integrados por snapshots/versionamento, sem gasto duplo, efeitos retroativos ou violação de tratados.
 - **Expansibilidade:** parâmetros são configuráveis por campanha; novos países e mais jogadores não exigem alterar a mecânica de agendamento.
@@ -58,6 +58,21 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Antiabuso:** critérios proporcionais para países menores, vedação de duplicação de pressões, resistência sem exploração de estado de guerra, e impossibilidade de o vencedor inventar unilateralmente termos sem regra.
 - **Ainda NÃO aprovados:** pesos e limiares de capitulação, tempo mínimo do colapso, duração da resposta, limite máximo de reparações/cessões, condições exatas de continuidade, caso de ocupação total e mecanismos de reversão.
 - **Detalhamento de proposta:** [Capitulação, pressão e continuidade v0.4](capitulacao-e-continuidade-v0.4.md).
+
+## Decisão 05 — Ciclo militar de 30 minutos (APROVADA)
+**Data:** 07/11/2026.
+
+**Escolha do responsável:** operações militares resolvidas a cada **30 minutos**.
+
+- Governo e economia mantêm os ciclos de **12 horas** da Decisão 01; diplomacia e mensagens permanecem acessíveis continuamente.
+- **Reconhecimento, movimentação, suprimentos operacionais, combate, perdas, recuos e controle militar de setores/pontos** são processados no ciclo de 30 minutos, com consistência transacional e resolução simultânea de todos os países envolvidos.
+- **Ordens persistentes e editáveis** permitem planejar trajetos, posturas e prioridades sem conexão permanente; cada ciclo usa somente a versão das ordens válida no seu fechamento.
+- **Sistemas não tripulados** entram na dinâmica de reconhecimento e combate como capacidades abstratas, sujeitos a estoque, reposição, comunicação, defesa antidrone e informação incompleta.
+- **Controle militar** muda em microciclos, enquanto **ocupação administrativa, economia e indicadores nacionais** fecham em 12 horas; a soberania só muda pelos atos políticos formalizados na Decisão 03.
+- **Cessar-fogo e tratados** devem prevalecer desde a vigência aplicável, sem permitir ordens posteriores incompatíveis.
+- Nenhuma ordem é processada no navegador; o servidor deve oferecer reprocessamento idempotente e log auditável.
+- **Detalhamento de engenharia e UX:** [Dinâmica militar e ordens v0.5](ciclos-militares-e-ordens-v0.5.md).
+- **Ainda não aprovados:** velocidades por formação e terreno, tabelas de perdas, alcance/duração de missões, consumo, fila/prioridade logística, número inicial de formações e limites de ordens por país. São parâmetros para balanceamento, não novas escolhas presumidas.
 
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
