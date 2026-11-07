@@ -234,7 +234,7 @@ Separar cor da **soberania** de hachuras de **ocupação**, com pontos e áreas 
 - **Prazo mínimo de colapso e notificação:** hipótese 48h/4 ciclos, pendente.
 - **Poder do vencedor:** catálogo de cláusulas compulsórias, teto de reparações, cessões territoriais e duração de restrições.
 - **Ocupação integral e continuidade excepcional:** limites do modo de representação de governo sob ocupação total.
-- **Número de microciclos militares:** hipótese de 30 minutos, pendente.
+- **Número de microciclos militares:** **30 minutos aprovados em 07/11/2026**, conforme [especificação v0.5](ciclos-militares-e-ordens-v0.5.md).
 - **Peso da derrota e reconstrução na pontuação da campanha:** pendente.
 
 **Regra de implementação:** não ativar capitulação compulsória antes da aprovação dos parâmetros e testes de invariantes. Nenhum deploy autorizado por esta documentação.
