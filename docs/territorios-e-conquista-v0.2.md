@@ -226,7 +226,7 @@ MUDANÇA FORMAL DE SOBERANIA (quando aplicável)
 - **Quais pontos e setores serão ativos no primeiro teste**; as cidades deste documento são exemplos cartográficos e não bases/objetivos militares automaticamente definidos.
 - **Fórmula de controle administrativo**, pesos de capitais/portos/guarnição, duração da consolidação, custos e formas de resistência.
 - Se o mapa mostrará uma camada de **ocupação territorial com controle parcial** pintada e quais critérios determinam área colorida.
-- **Intervalo dos microciclos militares**: exemplo de 30 minutos, ainda não confirmado.
+- **Intervalo dos microciclos militares: 30 minutos, aprovado em 07/11/2026**, conforme [especificação v0.5](ciclos-militares-e-ordens-v0.5.md).
 - **Quais oito países estarão definitivamente disponíveis** e o equilíbrio econômico/militar final.
 
 **Regra de execução:** nenhum novo deploy só para documentação. A implementação aguarda o aceite do recorte territorial, da experiência mobile e do motor mínimo.
