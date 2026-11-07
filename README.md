@@ -19,9 +19,10 @@ ESTATUM combina decisões políticas e diplomáticas com **guerra moderna**: dro
 - [Decisões oficiais — opção C aprovada](docs/decisoes-oficiais.md)
 - [Mapa e divisão territorial — modelo C aprovado](docs/mapa-e-divisao-territorial-v0.1.md)
 - [Divisão das 42 regiões e regras de conquista — proposta detalhada v0.2](docs/territorios-e-conquista-v0.2.md)
+- [Decisão 03 — Conquista, ocupação e capitulação v0.3](docs/conquista-e-ocupacao-v0.3.md)
 - **Prévia visual mobile publicada (sem backend):** https://crise-sul-americana-2030.vercel.app/ 
 - Código: [site/](site/) — HTML, CSS e JavaScript, modo demonstração.
 - Estado: protótipo de interface publicado; motor de economia, diplomacia e guerra ainda não implementado.
-- Próximo marco: validar a divisão cartográfica, os pontos estratégicos e as regras de controle/ocupação antes de implementar o motor de guerra.
+- Próximo marco: validar os pontos estratégicos, critérios de capitulação, consolidação da ocupação e período militar antes de implementar o motor de guerra.
 
 **Não reutilizar dados, convites, senhas ou chaves do Domínio Global.**
