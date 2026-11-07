@@ -3,7 +3,7 @@
 **Projeto:** Simulador de Diplomacia e Política.
 **Campanha de referência:** Crise Sul-Americana — 2030 (história alternativa com países reais).
 **Estado:** proposta para discussão; números são parâmetros ajustáveis, não decisões definitivas.
-**Atualização oficial de 07/11/2026:** foi aprovada a **opção C, ritmo híbrido**: política/economia por ciclos de 12 horas, diplomacia contínua e operações militares em ciclos mais curtos. O intervalo militar exato permanece pendente (30 min é exemplo proposto). Ver [Registro de decisões](decisoes-oficiais.md). As descrições antigas de resolução militar apenas a cada turno governamental são propostas anteriores superadas por essa decisão.
+**Atualização oficial de 07/11/2026:** foi aprovada a **opção C, ritmo híbrido**: política/economia por ciclos de 12 horas, diplomacia contínua e operações militares em ciclos mais curtos. O intervalo militar foi **aprovado como 30 minutos em 07/11/2026 (Decisão 05)**. Detalhes operacionais: [Ciclos militares e ordens v0.5](ciclos-militares-e-ordens-v0.5.md). Ver [Registro de decisões](decisoes-oficiais.md). As descrições antigas de resolução militar apenas a cada turno governamental são propostas anteriores superadas por essa decisão.
 **Princípio:** poucos jogadores, máxima qualidade e expansão sem reconstrução.
 **Escopo desta fase:** regras e experiência do jogador. Não implementar, publicar ou reutilizar dados do Domínio Global.
 
