@@ -2,6 +2,7 @@
 
 **Projeto:** Simulador de Diplomacia e Política · **Cenário:** Crise Sul-Americana (2030).
 **Estado:** PROPOSTA, sem motor executável nem deploy. Histórias e situações são fictícias.
+**Atualização vinculante de 07/11/2026:** Decisão 05 fixa **30 minutos** por microciclo militar. Consulte [ciclos militares, ordens, movimento, combate e drones v0.5](ciclos-militares-e-ordens-v0.5.md). Onde este documento antigo pressupõe um único ciclo militar por turno governamental, a regra atual é 24 microciclos por turno de 12 horas.
 **Princípio:** profundidade de simulação, simplicidade visual, poucos jogadores, expansão por dados.
 
 ## 1. Objetivo do sistema
