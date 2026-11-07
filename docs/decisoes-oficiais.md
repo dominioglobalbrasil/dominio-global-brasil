@@ -15,8 +15,21 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Consistência:** motor econômico e militar isolados em frequência, integrados por snapshots/versionamento, sem gasto duplo, efeitos retroativos ou violação de tratados.
 - **Expansibilidade:** parâmetros são configuráveis por campanha; novos países e mais jogadores não exigem alterar a mecânica de agendamento.
 
-## Decisão 02 — Mapa e divisão territorial (PENDENTE)
-Ainda **não** foi aprovada granularidade ou quantidade de regiões; ver [proposta cartográfica v0.1](mapa-e-divisao-territorial-v0.1.md).
+## Decisão 02 — Mapa e divisão territorial (APROVADA)
+**Data:** 07/11/2026.
+
+**Escolha do responsável:** Opção C — **mapa hierárquico**, com **42 regiões estratégicas como escala inicial** da campanha.
+
+- **País → região estratégica → pontos estratégicos / setores operacionais**; a interface e o modelo territorial devem ser expansíveis.
+- Países reais e geografia real na campanha *Crise Sul-Americana — 2030*, de história alternativa.
+- Controle de **cidades, bases, infraestrutura, corredores, forças e linhas logísticas** é distinguido do controle de uma região inteira.
+- Uma vitória ou incursão militar **não conquista automaticamente uma macrorregião**.
+- O número 42 é a **escala inicial aprovada**, com distribuição proposta Brasil 6, Argentina 6, Chile 5, Bolívia 5, Paraguai 5, Uruguai 4, Peru 6 e Equador 5; a lista de agregações administrativas e pontos específicos ainda requer validação geográfica e de balanceamento antes da implementação.
+- O mapa deve ter camadas/zoom adequados ao celular; setores detalhados e dados de inteligência apenas conforme relevância e permissão de cada jogador.
+- **Regras de conquista e ocupação:** em detalhamento, não considerar pesos/fórmulas numéricas como aprovados ainda.
+- Referências: [proposta cartográfica](mapa-e-divisao-territorial-v0.1.md) e [detalhamento territorial e de conquista](territorios-e-conquista-v0.2.md).
+
+**Pendências:** validar a agregação exata dos estados/províncias, quantidades e locais dos pontos operacionais, métricas de controle/ocupação e intervalos militares.
 
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
