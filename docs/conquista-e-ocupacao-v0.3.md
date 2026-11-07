@@ -195,7 +195,7 @@ Ao tocar um **setor ou ponto**, abrir ficha curta e contextual, nunca uma tela l
 ## 13. Decisões pendentes após esta etapa
 
 - **04 — Capitulação:** **opção C aprovada** em 07/11/2026: capitulação por pressão, com direito de resistência, negociação e continuidade do jogador. Gatilhos numéricos, prazos e limites de cláusulas ainda pendentes. Ver [detalhamento da Decisão 04 v0.4](capitulacao-e-continuidade-v0.4.md).
-- **05 — Tempo militar:** intervalo dos microciclos (30 minutos como hipótese, não decisão).
+- **05 — Tempo militar:** **30 minutos aprovados em 07/11/2026**, conforme [Decisão 05 e especificação v0.5](ciclos-militares-e-ordens-v0.5.md).
 - **06 — Ocupação:** fórmula de controle administrativo, número de microciclos para consolidar, custos e elasticidade de resistência.
 - Pontos estratégicos e geometria real de cada macrorregião, inclusive ilhas e capitais especiais.
 - Escala inicial dos equipamentos, tipos de formação e unidades não tripuladas.
