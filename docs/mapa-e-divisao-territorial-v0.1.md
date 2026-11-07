@@ -86,7 +86,8 @@ Prova de conceito isolada numa faixa de fronteira **fictícia**, com duas naçõ
 - Uma única seleção no mapa é operável com o dedo, sem precisar clicar em polígonos minúsculos.
 - A geometria e os pontos são dirigidos por dados; ampliar para 42 regiões não altera a lógica de jogo.
 
-## 8. Perguntas de aprovação
-**Decisão 02:** optar por A (divisões administrativas), B (macrorregiões simples) ou C (hierarquia com macrorregiões + setores de frente + pontos estratégicos).
-Se C for escolhida: validar se as **42 regiões estratégicas propostas** são escala inicial aceitável e, depois, aprovar os limites dos setores operacionais.
+## 8. Resultado oficial e pendências
+**Decisão 02 aprovada em 07/11/2026:** opção C, hierarquia com 42 regiões estratégicas como escala inicial.
+Os limites dos pontos, setores operacionais, fórmulas de ocupação e agregações exatas ADM1 ainda estão sujeitos à validação.
+Ver [Documento v0.2 de território e conquista](territorios-e-conquista-v0.2.md) e [registro oficial](decisoes-oficiais.md).
 **Nenhum deploy nem implementação autorizado por este rascunho.**
