@@ -31,6 +31,19 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 
 **Pendências:** validar a agregação exata dos estados/províncias, quantidades e locais dos pontos operacionais, métricas de controle/ocupação e intervalos militares.
 
+## Decisão 03 — Soberania, ocupação e anexação (APROVADA)
+**Data:** 07/11/2026.
+
+**Escolha do responsável:** opção **C — sistema misto** de conquista.
+
+- Uma ofensiva pode mudar o **controle militar** de pontos e setores; isso não transfere automaticamente a soberania jurídica.
+- O ocupante pode estabelecer **controle administrativo parcial**, com efeitos proporcionais, necessidade de suprimento, presença, estabilidade e custo de ocupação.
+- A **anexação ou mudança definitiva de soberania** depende de um **tratado de paz, capitulação ou outro processo político expressamente previsto nas regras do cenário**, com evento verificável e auditável.
+- A queda de uma capital, a captura de uma única posição ou a ocupação de uma região **não** equivalem automaticamente à anexação, à transferência de todos os recursos ou a vitória na campanha.
+- Regras devem conectar o microciclo militar ao turno governamental de 12h, com diplomacia contínua e vigência explícita dos tratados.
+- **Ainda não aprovados:** coeficientes, tempo mínimo de consolidação, critérios de capitulação, custos e fórmulas de ocupação; serão tratados separadamente como propostas.
+- Especificação: [Conquista, ocupação e capitulação v0.3](conquista-e-ocupacao-v0.3.md).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
