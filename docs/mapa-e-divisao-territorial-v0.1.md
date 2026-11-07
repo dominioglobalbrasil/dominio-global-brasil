@@ -1,6 +1,8 @@
 # ESTATUM — Proposta de mapa e divisão territorial v0.1
 
-**Status: EM DISCUSSÃO — NÃO APROVADA.**
+**Status: MODELO C APROVADO em 07/11/2026; agregações e regras detalhadas seguem em proposta.**
+
+**Decisão oficial:** mapa hierárquico por país → região estratégica → pontos e setores operacionais. Escala de partida: 42 regiões. Ver [registro de decisões](decisoes-oficiais.md) e [detalhamento v0.2](territorios-e-conquista-v0.2.md).
 **Data:** 07/11/2026.
 **Campanha:** Crise Sul-Americana — 2030, países reais e eventos ficcionais.
 
