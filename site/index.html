@@ -1,94 +1,131 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071323"><meta name="description" content="Crise Sul-Americana 2030 — experiência mobile do simulador de diplomacia e política.">
-<title>Crise Sul-Americana 2030 · Simulador de Diplomacia</title><link rel="stylesheet" href="./style.css">
+<meta name="theme-color" content="#041119"><meta name="description" content="ESTATUM · Grande estratégia geopolítica e guerra moderna. Campanha Crise Sul-Americana 2030.">
+<title>ESTATUM — Grand Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Exo+2:wght@500;600;700;800;900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="./style.css?v=2">
 </head><body>
-<div id="app">
-<header class="masthead">
-  <div class="seal" aria-hidden="true">♜</div>
-  <div class="mastcopy"><span class="eyebrow">GRANDE ESTRATÉGIA GEOPOLÍTICA</span><strong>CRISE SUL-AMERICANA</strong><small>HISTÓRIA ALTERNATIVA · 2030</small></div>
-  <button class="turn-chip" id="turn-chip" aria-label="Ver informações do turno"><span>▦</span><span><b>12 / 40</b><small>TURNO</small></span><span class="turn-arrow">›</span></button>
-</header>
-<div class="preview-banner"><span class="pulse"></span> PRÉVIA INTERATIVA <span class="soft">· valores fictícios · sem partida ativa</span></div>
-<div class="resource-bar" aria-label="Indicadores econômicos">
- <div class="resource"><span class="res-icon">♜</span><span><small>Tesouro</small><b>US$ 186,4 bi</b><em>↗ +2,8%</em></span></div>
- <div class="resource"><span class="res-icon">▥</span><span><small>PIB</small><b>US$ 2,31 tri</b><em>↗ +2,1%</em></span></div>
- <div class="resource"><span class="res-icon">ϟ</span><span><small>Energia</small><b>104%</b><em>↗ Estável</em></span></div>
- <div class="resource"><span class="res-icon">♟</span><span><small>Defesa</small><b>89%</b><em class="flat">= Prontidão</em></span></div>
-</div>
-<main id="main">
- <section class="screen active" data-screen="gabinete" id="view-gabinete">
-   <div class="section-title"><span>◈</span> MAPA POLÍTICO <small>AMÉRICA DO SUL · 2030</small></div>
-   <div class="map-frame" id="map-frame">
-    <div class="map-stars"></div><div class="water-glow"></div>
-    <svg id="political-map" viewBox="0 0 600 760" aria-label="Mapa político interativo da América do Sul" role="img"><defs>
-      <filter id="country-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#07101c" flood-opacity=".8"/></filter>
-    </defs><g id="country-paths"></g></svg>
-    <div class="map-fallback" id="map-fallback" aria-hidden="true"></div>
-    <div class="map-tags" id="map-tags">
-       <button class="map-tag mini" data-country="Colômbia" style="left:31%;top:16%">🇨🇴 <span>Colômbia</span></button>
-       <button class="map-tag mini" data-country="Venezuela" style="left:63%;top:14%">🇻🇪 <span>Venezuela</span></button>
-       <button class="map-tag mini" data-country="Equador" style="left:17%;top:24%">🇪🇨 <span>Equador</span></button>
-       <button class="map-tag mini" data-country="Peru" style="left:29%;top:38%">🇵🇪 <span>Peru</span></button>
-       <button class="map-tag primary" data-country="Brasil" style="left:64%;top:43%">🇧🇷 <span>Brasil</span></button>
-       <button class="map-tag mini" data-country="Bolívia" style="left:40%;top:55%">🇧🇴 <span>Bolívia</span></button>
-       <button class="map-tag mini" data-country="Chile" style="left:27%;top:72%">🇨🇱 <span>Chile</span></button>
-       <button class="map-tag mini" data-country="Paraguai" style="left:60%;top:67%">🇵🇾 <span>Paraguai</span></button>
-       <button class="map-tag mini" data-country="Argentina" style="left:46%;top:82%">🇦🇷 <span>Argentina</span></button>
-       <button class="map-tag mini" data-country="Uruguai" style="left:73%;top:87%">🇺🇾 <span>Uruguai</span></button>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18m0-18c5 5 5 13 0 18"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 21 6v6c0 5-3.2 8-9 10-5.8-2-9-5-9-10V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-bank" viewBox="0 0 24 24"><path d="m2 10 10-7 10 7M4 10h16M5 10v8m5-8v8m4-8v8m5-8v8M2 21h20M3 18h18"/></symbol>
+<symbol id="i-handshake" viewBox="0 0 24 24"><path d="m2 8 4-4 5 2 3-2 8 4-4 6-3-2-4 5-3-1-3 1-3-4z"/><path d="m7 12 4 4m-1-6 5 3"/></symbol>
+<symbol id="i-tank" viewBox="0 0 24 24"><path d="M2 13h20l-2 5H5l-3-5Zm5-1V7h8l3 5M13 7V4h7M4 20h16"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/></symbol>
+<symbol id="i-drone" viewBox="0 0 24 24"><path d="m12 9 4-4m-4 4L8 5m4 4 4 4m-4-4-4 4m-6-8 4 4m12-4 4 4M2 19l4-4m12 0 4 4"/><circle cx="12" cy="9" r="2"/><circle cx="5" cy="4" r="2"/><circle cx="19" cy="4" r="2"/><circle cx="5" cy="16" r="2"/><circle cx="19" cy="16" r="2"/></symbol>
+<symbol id="i-signal" viewBox="0 0 24 24"><path d="M12 19V10m-5 9v-4m10 4V6M3 19v-7m18 7V3"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m2 7 10 7 10-7"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2h6M10 2v8l-7 10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2l-7-10V2M7 16h10"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 21V12h4v9m3 0V8h4v13m3 0V3h4v18M2 21h20"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+<symbol id="i-crosshair" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 1v5m0 12v5M1 12h5m12 0h5"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3v1"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0v5l-3 4h18l-3-4zm-8 12h4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5 11-11"/></symbol>
+<symbol id="i-satellite" viewBox="0 0 24 24"><path d="m8 8 8 8m-7-4 3-3m-6-7 6 6-4 4-6-6zM18 12l4 4-6 6-4-4zM13 4a7 7 0 0 1 7 7"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 22V3m0 1c6-3 9 3 16 0v12c-7 3-10-3-16 0"/></symbol>
+<symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V10l7 4V9l7 5V7l4 2v12zM3 21h18M6 18h2m3 0h2m3 0h2M17 7V3h3v6"/></symbol>
+</svg>
+<div class="app" id="app">
+ <header class="masthead">
+  <button class="header-icon" id="menu-btn" aria-label="Abrir menu"><svg><use href="#i-menu"/></svg></button>
+  <div class="brand" aria-label="ESTATUM Grand Strategy"><span class="brand-emblem">◉</span><strong>ESTATUM</strong><span class="brand-sub">G R A N D &nbsp; S T R A T E G Y</span></div>
+  <button class="header-icon bell" id="notice-btn" aria-label="Abrir notificações"><svg><use href="#i-bell"/></svg><i></i></button>
+ </header>
+ <div class="top-context">
+  <span class="campaign">CAMPANHA 001 <span class="slash">/</span> CRISE SUL-AMERICANA · 2030</span>
+  <span class="demo-tag">PRÉVIA</span>
+ </div>
+ <main class="main">
+  <section class="screen active" id="screen-mapa" data-view="mapa">
+    <div class="country-bar">
+     <button class="country-select" data-action="countries"><span class="flag" id="nation-flag">🇧🇷</span><span class="country-text"><b id="nation-name">Brasil</b><small>REPÚBLICA FEDERATIVA</small></span><span class="chev">⌄</span></button>
+     <button class="date-badge" data-action="turn"><svg><use href="#i-flag"/></svg><b>15 MAR 2030</b><small>TURNO 12 · DIA 6</small></button>
     </div>
-    <div class="map-controls"><button aria-label="Alternar camadas do mapa" id="layer-toggle">▱</button><button aria-label="Aproximar mapa" id="zoom-plus">+</button><button aria-label="Afastar mapa" id="zoom-minus">−</button><button aria-label="Centralizar mapa" id="zoom-reset">⌖</button></div>
-    <div class="map-scale">POLÍTICO <span id="map-layer-label">● NAÇÕES</span></div>
+    <div class="resource-strip">
+     <div class="resource"><span class="resource-ico money">◆</span><div><b>1,28 <em>tri</em></b><small>TESOURO <span>+3,4%</span></small></div></div>
+     <div class="resource"><svg><use href="#i-factory"/></svg><div><b>420 <em>bi</em></b><small>PRODUÇÃO <span>+2,1%</span></small></div></div>
+     <div class="resource"><span class="resource-ico man">●</span><div><b>1,9 <em>mi</em></b><small>EFETIVOS <span>ATIVOS</span></small></div></div>
+     <div class="resource"><span class="resource-ico energy">ϟ</span><div><b>87%</b><small>ENERGIA <span>ESTÁVEL</span></small></div></div>
+    </div>
+    <div class="map-stage">
+      <div id="world-map" aria-label="Mapa estratégico da América do Sul"></div>
+      <div class="map-vignette"></div><div class="map-grid"></div>
+      <div class="map-chip"><span class="live-dot"></span> VISÃO ESTRATÉGICA <span class="map-chip-right">SATÉLITE · 2030</span></div>
+      <div class="map-tools">
+       <button data-action="layer" title="Alternar camada"><svg><use href="#i-layers"/></svg></button>
+       <button data-action="center" title="Centralizar mapa"><svg><use href="#i-crosshair"/></svg></button>
+       <button data-action="zoom-in" title="Aproximar">+</button><button data-action="zoom-out" title="Afastar">−</button>
+      </div>
+      <div class="map-legend" id="map-legend"><i></i> POLÍTICO <span>· NAÇÕES E FRONTEIRAS</span></div>
+      <button class="map-world-command" data-action="map-info">ABRIR COMANDO <svg><use href="#i-arrow"/></svg></button>
+      <button class="map-intel" data-action="alert"><svg><use href="#i-alert"/></svg><span><b>ALERTA DE INTELIGÊNCIA</b><small>Atividade militar reportada no Paraguai</small></span><svg class="map-intel-arrow"><use href="#i-arrow"/></svg></button>
+    </div>
+    <div class="map-below">
+     <div class="section-row"><span>ESTADO DA NAÇÃO</span><span>ATUALIZADO NO TURNO 12</span></div>
+     <div class="nation-pulse"><div><small>ESTABILIDADE</small><b>73%</b><i style="--pct:73%"></i></div><div><small>INFLUÊNCIA</small><b>84</b><i style="--pct:84%"></i></div><div><small>PRONTIDÃO</small><b>87%</b><i style="--pct:87%"></i></div></div>
+     <button class="big-game-btn" data-action="turn">CENTRO DE DECISÕES <svg><use href="#i-arrow"/></svg></button>
+    </div>
+  </section>
+  <section class="screen sub-screen" id="screen-defesa" data-view="defesa">
+   <div class="page-heading"><div class="breadcrumb">ESTADO-MAIOR / BRASIL</div><h1><svg><use href="#i-tank"/></svg> Defesa</h1><p>Organize as forças, garanta suprimentos e acompanhe a guerra moderna.</p></div>
+   <div class="hero hero-defense"><div class="hero-shade"></div><div class="hero-eyebrow">CENTRO DE OPERAÇÕES · 2030</div><strong>O futuro da guerra<br>já está no campo.</strong><span>DRONES · DOUTRINA · INTELIGÊNCIA</span></div>
+   <div class="inner-tabs" id="defense-tabs" role="tablist">
+    <button class="on" data-defense="forcas"><svg><use href="#i-tank"/></svg><span>Forças</span></button>
+    <button data-defense="drones"><svg><use href="#i-drone"/></svg><span>Drones</span></button>
+    <button data-defense="aerea"><svg><use href="#i-shield"/></svg><span>Defesa Aérea</span></button>
+    <button data-defense="eletronica"><svg><use href="#i-signal"/></svg><span>Guerra Eletrônica</span></button>
+    <button data-defense="operacoes"><svg><use href="#i-crosshair"/></svg><span>Operações</span></button>
    </div>
-   <section class="nation-card">
-     <div class="nation-top"><span class="nation-flag" id="nation-flag">🇧🇷</span><div class="nation-name"><span class="eyebrow">GOVERNO SELECIONADO</span><h1 id="nation-name">Brasil</h1><small id="nation-subtitle">República Federativa do Brasil</small></div><button id="country-picker" aria-label="Selecionar país" class="icon-btn">⌄</button></div>
-     <div class="nation-stats"><div><small>Estabilidade</small><b id="stat-stability">73%</b><div class="meter"><i style="width:73%"></i></div></div><div><small>Popularidade</small><b id="stat-popularity">58%</b><div class="meter amber"><i style="width:58%"></i></div></div><div><small>Influência</small><b id="stat-influence">65%</b><div class="meter blue"><i style="width:65%"></i></div></div></div>
-   </section>
-   <div class="section-title menu-heading">CENTROS DE GOVERNO <small>SELECIONE UMA ÁREA</small></div>
-   <div class="feature-carousel" aria-label="Áreas do governo">
-     <button class="feature-card" data-go="gabinete"><div class="feature-photo palace"></div><div class="feature-title"><span>♜</span><b>Gabinete</b></div><small>Política e reformas</small></button>
-     <button class="feature-card" data-go="diplomacia"><div class="feature-photo diplomacy"></div><div class="feature-title"><span>♧</span><b>Diplomacia</b></div><small>Relações e acordos</small></button>
-     <button class="feature-card" data-go="economia"><div class="feature-photo economy"></div><div class="feature-title"><span>▥</span><b>Economia</b></div><small>Comércio e produção</small></button>
-     <button class="feature-card" data-go="defesa"><div class="feature-photo defense"></div><div class="feature-title"><span>♞</span><b>Defesa</b></div><small>Forças e segurança</small></button>
+   <div id="defense-content"></div>
+  </section>
+  <section class="screen sub-screen" id="screen-diplomacia" data-view="diplomacia">
+   <div class="page-heading"><div class="breadcrumb">CHANCELARIA / BRASIL</div><h1><svg><use href="#i-handshake"/></svg> Diplomacia</h1><p>Estabeleça relações, negocie acordos e equilibre o poder regional.</p></div>
+   <div class="hero hero-diplomacy"><div class="hero-shade"></div><div class="hero-eyebrow">CONSELHO DAS NAÇÕES</div><strong>A próxima guerra pode<br>ser evitada à mesa.</strong><span>ALIANÇAS · TRATADOS · INFLUÊNCIA</span></div>
+   <div class="inner-tabs" id="diplomacy-tabs" role="tablist">
+    <button class="on" data-diplomacy="relacoes"><svg><use href="#i-globe"/></svg><span>Relações</span></button>
+    <button data-diplomacy="propostas"><svg><use href="#i-mail"/></svg><span>Propostas</span></button>
+    <button data-diplomacy="acordos"><svg><use href="#i-check"/></svg><span>Acordos</span></button>
+    <button data-diplomacy="blocos"><svg><use href="#i-handshake"/></svg><span>Blocos</span></button>
+    <button data-diplomacy="mensagens"><svg><use href="#i-mail"/></svg><span>Mensagens</span><i></i></button>
    </div>
-   <div class="section-title"><span>!</span> ALERTAS DO GOVERNO <small class="red-dot">2</small></div>
-   <div class="alerts"><button data-alert="treaty"><span class="alert-ico">♧</span><span>Proposta diplomática da Argentina <small>Resposta aguardando decisão</small></span><strong>›</strong></button><button data-alert="border"><span class="alert-ico">⚔</span><span>Tensão na fronteira com a Bolívia <small>Relatório de inteligência disponível</small></span><strong>›</strong></button></div>
-   <button class="primary-action" id="main-actions"><span>⚖</span> AÇÕES DO TURNO <b>›</b></button>
- </section>
- <section class="screen secondary-screen" data-screen="diplomacia" id="view-diplomacia">
-  <div class="screen-intro"><span class="eyebrow">CHANCELARIA · 2030</span><h2>Diplomacia</h2><p>Negociações e tratados dão forma à nova ordem regional.</p></div>
-  <div class="hero-banner diplomacy-bg"><div class="hero-banner-label">CONSELHO DE RELAÇÕES EXTERIORES</div><strong>Um acordo pode evitar uma guerra.</strong></div>
-  <div class="subheading">PROPOSTA RECEBIDA <span class="notice">1 pendente</span></div>
-  <article class="detail-panel"><div class="country-heading"><span class="flag-circle">🇦🇷</span><div><b>Argentina</b><small>Acordo bilateral · energia</small></div><span class="pending-pill" id="treaty-status">Pendente</span></div><h3>Corredor de Integração Energética</h3><p>Intercâmbio de energia e investimentos conjuntos em infraestrutura de fronteira por 6 turnos.</p><div class="term-grid"><div><small>Benefício estimado</small><b class="positive">+4% energia</b></div><div><small>Custo estimado</small><b>CG 320 mi</b></div><div><small>Vigência</small><b>6 turnos</b></div></div><div class="panel-actions"><button class="btn-muted" id="treaty-reject">Recusar</button><button class="btn-gold" id="treaty-accept">Aceitar proposta</button></div></article>
-  <div class="subheading">RELAÇÕES REGIONAIS</div><div class="relation-grid"><button data-country="Uruguai">🇺🇾 <span>Uruguai<small>Cooperação estável</small></span> ↗</button><button data-country="Chile">🇨🇱 <span>Chile<small>Parceiro comercial</small></span> ↗</button><button data-country="Paraguai">🇵🇾 <span>Paraguai<small>Neutralidade</small></span> →</button><button data-country="Bolívia">🇧🇴 <span>Bolívia<small>Relações tensas</small></span> ↘</button></div>
- </section>
- <section class="screen secondary-screen" data-screen="defesa" id="view-defesa">
-   <div class="screen-intro"><span class="eyebrow">ESTADO-MAIOR · 2030</span><h2>Defesa Nacional</h2><p>Planeje a segurança, avalie logística e determine objetivos.</p></div>
-   <div class="hero-banner defense-bg"><div class="hero-banner-label">CENTRO ESTRATÉGICO</div><strong>Uma força sem suprimentos não vence.</strong></div>
-   <div class="subheading">SITUAÇÃO DAS FORÇAS <span class="notice">Dados simulados</span></div>
-   <div class="defense-meters"><div><span>Prontidão operacional</span><b>89%</b><div class="meter"><i style="width:89%"></i></div></div><div><span>Estoque de combustível</span><b>74%</b><div class="meter amber"><i style="width:74%"></i></div></div><div><span>Capacidade logística</span><b>61%</b><div class="meter blue"><i style="width:61%"></i></div></div></div>
-   <div class="subheading">FORMAÇÕES DISPONÍVEIS</div>
-   <div class="unit"><div class="unit-insignia">♞</div><span><b>1ª Brigada Mecanizada</b><small>Setor Centro-Oeste · prontidão 91%</small></span><button class="small-gold" data-order="1ª Brigada Mecanizada">Ordenar</button></div>
-   <div class="unit"><div class="unit-insignia">♟</div><span><b>Comando de Fronteira</b><small>Setor Norte · prontidão 78%</small></span><button class="small-gold" data-order="Comando de Fronteira">Ordenar</button></div>
-   <p class="muted-note">As ordens demonstram a navegação. O motor logístico e de combate ainda não está conectado.</p>
- </section>
- <section class="screen secondary-screen" data-screen="economia" id="view-economia">
-   <div class="screen-intro"><span class="eyebrow">MINISTÉRIO DA FAZENDA · 2030</span><h2>Economia</h2><p>Fortaleça a produção nacional sem comprometer o orçamento.</p></div>
-   <div class="hero-banner economy-bg"><div class="hero-banner-label">PAINEL ECONÔMICO</div><strong>Prosperidade é poder estratégico.</strong></div>
-   <div class="eco-tiles"><div><small>Tesouro</small><strong>US$ 186,4 bi</strong><em>↑ 2,8%</em></div><div><small>Produção</small><strong>82 / 100</strong><em>↑ 1,6%</em></div><div><small>Energia</small><strong>104%</strong><em>Reservas estáveis</em></div><div><small>Dívida</small><strong>27%</strong><em>Controle fiscal</em></div></div>
-   <div class="subheading">PLANEJAMENTO NACIONAL</div>
-   <article class="detail-panel"><h3>Escolha uma prioridade de investimento</h3><p>As opções mostram um resultado possível, ainda sem motor econômico real.</p><div class="investment"><button data-invest="Infraestrutura regional"><span>▥</span><span><b>Infraestrutura regional</b><small>Amplia a capacidade logística no médio prazo.</small></span><b>CG 480 mi ›</b></button><button data-invest="Modernização industrial"><span>⚙</span><span><b>Modernização industrial</b><small>Expande a oferta de insumos militares e civis.</small></span><b>CG 420 mi ›</b></button><button data-invest="Programa de estabilidade"><span>♜</span><span><b>Programa de estabilidade</b><small>Melhora a coesão social e serviços públicos.</small></span><b>CG 260 mi ›</b></button></div></article>
- </section>
- <section class="screen secondary-screen" data-screen="relatorios" id="view-relatorios">
-   <div class="screen-intro"><span class="eyebrow">SECRETARIA DE GOVERNO · 2030</span><h2>Relatórios</h2><p>Acompanhe os acontecimentos e as decisões do gabinete.</p></div>
-   <div class="subheading">BOLETIM DO TURNO 12</div>
-   <article class="news-feature"><span>BOLETIM REGIONAL</span><h3>Novos arranjos de poder movimentam a América do Sul</h3><p>Governos buscam acordos de energia e estabilidade enquanto a atenção se volta às fronteiras.</p></article>
-   <div class="subheading">HISTÓRICO DE AÇÕES <span class="notice">Nesta prévia</span></div><div class="history" id="history"><div class="history-empty">Nenhuma ação de demonstração foi registrada.</div></div>
- </section>
-</main>
-<nav class="bottom-nav" aria-label="Navegação principal"><button class="nav-item active" data-go="gabinete"><span>♜</span><small>Gabinete</small></button><button class="nav-item" data-go="diplomacia"><span>♧</span><small>Diplomacia</small></button><button class="nav-item" data-go="defesa"><span>♞</span><small>Defesa</small></button><button class="nav-item" data-go="economia"><span>▥</span><small>Economia</small></button><button class="nav-item" data-go="relatorios"><span>▤</span><small>Relatórios</small></button></nav>
-<div class="overlay hidden" id="overlay" aria-hidden="true"><div class="shade" data-close></div><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"><div class="sheet-handle"></div><button class="sheet-close" data-close aria-label="Fechar">×</button><div id="sheet-content"></div></div></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-</div><script src="./app.js" defer></script></body></html>
+   <div id="diplomacy-content"></div>
+  </section>
+  <section class="screen sub-screen" id="screen-governo" data-view="governo">
+    <div class="page-heading"><div class="breadcrumb">PALÁCIO PRESIDENCIAL / BRASIL</div><h1><svg><use href="#i-bank"/></svg> Governo</h1><p>Uma nação forte começa pelas decisões que você toma.</p></div>
+    <div class="hero hero-government"><div class="hero-shade"></div><div class="hero-eyebrow">GABINETE DO PRESIDENTE</div><strong>O poder exige<br>decisões difíceis.</strong><span>ESTABILIDADE · POLÍTICA · REFORMAS</span></div>
+    <div class="game-panel"><div class="panel-title"><span>SITUAÇÃO INTERNA</span><span class="tag ok">ESTÁVEL</span></div>
+     <div class="scores"><div><b>73%</b><small>ESTABILIDADE</small><div class="track"><i style="width:73%"></i></div></div><div><b>68%</b><small>APOIO POPULAR</small><div class="track"><i style="width:68%"></i></div></div></div></div>
+    <div class="section-row"><span>DECISÕES DO GABINETE</span><span>2 DISPONÍVEIS</span></div>
+    <button class="action-row" data-action="policy" data-value="Reforma administrativa"><span class="action-icon"><svg><use href="#i-bank"/></svg></span><span><b>Reforma administrativa</b><small>Melhora a eficiência do Estado com custos iniciais.</small></span><svg class="arrow"><use href="#i-arrow"/></svg></button>
+    <button class="action-row" data-action="policy" data-value="Programa de estabilidade"><span class="action-icon"><svg><use href="#i-shield"/></svg></span><span><b>Programa de estabilidade</b><small>Fortalece serviços essenciais e reduz tensões.</small></span><svg class="arrow"><use href="#i-arrow"/></svg></button>
+    <button class="big-game-btn" data-action="turn">REVISAR DECISÕES DO TURNO <svg><use href="#i-arrow"/></svg></button>
+  </section>
+  <section class="screen sub-screen" id="screen-economia" data-view="economia">
+    <div class="page-heading"><div class="breadcrumb">MINISTÉRIO DA FAZENDA / BRASIL</div><h1><svg><use href="#i-chart"/></svg> Economia</h1><p>Produção, indústria e logística sustentam o poder nacional.</p></div>
+    <div class="hero hero-economy"><div class="hero-shade"></div><div class="hero-eyebrow">PLANO ECONÔMICO NACIONAL</div><strong>Produção é poder.<br>Logística é estratégia.</strong><span>INDÚSTRIA · TECNOLOGIA · COMÉRCIO</span></div>
+    <div class="economy-grid"><div><small>TESOURO</small><strong>1,28 tri</strong><span>▲ 3,4% por turno</span></div><div><small>PRODUÇÃO</small><strong>420 bi</strong><span>▲ 2,1% por turno</span></div><div><small>ENERGIA</small><strong>87%</strong><span>Autossuficiência</span></div><div><small>CAPACIDADE</small><strong>72%</strong><span>Indústria militar</span></div></div>
+    <div class="section-row"><span>INVESTIMENTOS ESTRATÉGICOS</span><span>DECISÃO POR TURNO</span></div>
+    <button class="action-row" data-action="investment" data-value="Indústria de drones"><span class="action-icon"><svg><use href="#i-drone"/></svg></span><span><b>Indústria de drones</b><small>Produção nacional de sistemas não tripulados.</small></span><svg class="arrow"><use href="#i-arrow"/></svg></button>
+    <button class="action-row" data-action="investment" data-value="Infraestrutura logística"><span class="action-icon"><svg><use href="#i-factory"/></svg></span><span><b>Infraestrutura logística</b><small>Amplia capacidade de suprimento e comércio.</small></span><svg class="arrow"><use href="#i-arrow"/></svg></button>
+    <button class="action-row" data-action="investment" data-value="Pesquisa e tecnologia"><span class="action-icon"><svg><use href="#i-flask"/></svg></span><span><b>Pesquisa e tecnologia</b><small>Estimula autonomia tecnológica.</small></span><svg class="arrow"><use href="#i-arrow"/></svg></button>
+  </section>
+ </main>
+ <nav class="bottom-nav" aria-label="Navegação do jogo">
+  <button class="nav-link active" data-go="mapa"><svg><use href="#i-globe"/></svg><span>Mapa</span></button>
+  <button class="nav-link" data-go="governo"><svg><use href="#i-bank"/></svg><span>Governo</span></button>
+  <button class="nav-link" data-go="diplomacia"><svg><use href="#i-handshake"/></svg><span>Diplomacia</span></button>
+  <button class="nav-link" data-go="defesa"><svg><use href="#i-tank"/></svg><span>Defesa</span></button>
+  <button class="nav-link" data-go="economia"><svg><use href="#i-chart"/></svg><span>Economia</span></button>
+ </nav>
+ <div class="overlay hidden" id="overlay"><div class="overlay-dim" data-close></div><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+ <div class="modal-handle"></div><button class="modal-close" data-close aria-label="Fechar">×</button><div id="modal-content"></div></div></div>
+ <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+<script src="./app.js?v=2" defer></script>
+</body></html>
