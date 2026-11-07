@@ -1,4 +1,6 @@
-# Simulador de Diplomacia e Política — Planejamento
+# ESTATUM — Estratégia Geopolítica e Guerra Moderna
+
+**Nome oficial do jogo:** ESTATUM. **Campanha inicial:** Crise Sul-Americana — 2030 (história alternativa).
 
 O antigo jogo **Domínio Global — Brasil** foi encerrado em 04/11/2026. O código antigo foi retirado da branch principal e seus dados operacionais removidos do Supabase.
 
@@ -6,13 +8,14 @@ O antigo jogo **Domínio Global — Brasil** foi encerrado em 04/11/2026. O cód
 
 **Princípio:** poucos jogadores, qualidade profunda e expansão por configuração.
 
-O novo projeto prioriza decisões políticas e diplomáticas significativas, além de um motor militar sofisticado na lógica e econômico nos gráficos.
+ESTATUM combina decisões políticas e diplomáticas com **guerra moderna**: drones, reconhecimento, defesa antidrone, guerra eletrônica, indústria, logística, forças convencionais e inovação doutrinária. Simulação profunda na lógica e econômica na representação gráfica.
 
 - [Documento fundador v0.1 — direção aprovada, regras em elaboração](docs/documento-fundador-v0.1.md)
 - [Cenário 001 — Crise Sul-Americana, 2030](docs/cenario-001-america-do-sul-2030.md)
 - [Regras do ciclo de governo e turno — v0.1](docs/ciclo-de-turno-v0.1.md)
 - [Economia, comércio, custos de guerra e condições de vitória — v0.1](docs/economia-e-vitoria-v0.1.md)
 - [Motor militar — especificação de design v0.1](docs/motor-militar-v0.1.md)
+- [ESTATUM — diretriz de guerra moderna e drones v0.1](docs/estatum-guerra-moderna-e-drones-v0.1.md)
 - **Prévia visual mobile publicada (sem backend):** https://crise-sul-americana-2030.vercel.app/ 
 - Código: [site/](site/) — HTML, CSS e JavaScript, modo demonstração.
 - Estado: protótipo de interface publicado; motor de economia, diplomacia e guerra ainda não implementado.
