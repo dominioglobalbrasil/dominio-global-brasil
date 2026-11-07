@@ -44,6 +44,21 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Ainda não aprovados:** coeficientes, tempo mínimo de consolidação, critérios de capitulação, custos e fórmulas de ocupação; serão tratados separadamente como propostas.
 - Especificação: [Conquista, ocupação e capitulação v0.3](conquista-e-ocupacao-v0.3.md).
 
+## Decisão 04 — Capitulação por pressão e continuidade do derrotado (APROVADA)
+**Data:** 07/11/2026.
+
+**Escolha do responsável:** opção **C — capitulação por pressão**, com possibilidade de resistência, negociação ou rendição voluntária; em caso de **colapso prolongado e demonstrável**, o sistema pode instaurar processo formal de capitulação com efeitos limitados mesmo sem consentimento do governante.
+
+- **Não há rendição instantânea por uma derrota, perda da capital ou conquista isolada.** Pressão militar, situação econômica, controle territorial e capacidade de governo serão avaliados de maneira proporcional e verificável.
+- O governante tem caminhos para **resistir, negociar, aceitar termos, buscar mediação ou recuperar capacidade** antes de eventual imposição.
+- **Capitulação forçada exige processo objetivo e anunciado previamente**, continuidade do colapso, notificação e prazo para resposta, regras publicadas antes da campanha e resultado auditável.
+- **A capitulação não equivale a anexação integral.** Cessões territoriais e outras obrigações dependem de cláusulas territorialmente específicas e dos limites definidos pelo regulamento.
+- **O jogador derrotado não é expulso automaticamente da campanha.** Deve continuar jogando, quando seu país conservar governo/território e conforme regras de continuidade; participar da reconstrução, renegociar obrigações e buscar metas não militares.
+- Um país derrotado pode continuar como **soberania reduzida/ocupação parcial**, sob compromissos ou restrições temporárias, sem perder automaticamente a identidade nacional.
+- **Antiabuso:** critérios proporcionais para países menores, vedação de duplicação de pressões, resistência sem exploração de estado de guerra, e impossibilidade de o vencedor inventar unilateralmente termos sem regra.
+- **Ainda NÃO aprovados:** pesos e limiares de capitulação, tempo mínimo do colapso, duração da resposta, limite máximo de reparações/cessões, condições exatas de continuidade, caso de ocupação total e mecanismos de reversão.
+- **Detalhamento de proposta:** [Capitulação, pressão e continuidade v0.4](capitulacao-e-continuidade-v0.4.md).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
