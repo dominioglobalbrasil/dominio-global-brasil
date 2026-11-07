@@ -16,14 +16,15 @@ ESTATUM combina decisões políticas e diplomáticas com **guerra moderna**: dro
 - [Economia, comércio, custos de guerra e condições de vitória — v0.1](docs/economia-e-vitoria-v0.1.md)
 - [Motor militar — especificação de design v0.1](docs/motor-militar-v0.1.md)
 - [ESTATUM — diretriz de guerra moderna e drones v0.1](docs/estatum-guerra-moderna-e-drones-v0.1.md)
-- [Decisões oficiais — opções 01–04 aprovadas](docs/decisoes-oficiais.md)
+- [Decisões oficiais — opções 01–05 aprovadas](docs/decisoes-oficiais.md)
 - [Mapa e divisão territorial — modelo C aprovado](docs/mapa-e-divisao-territorial-v0.1.md)
 - [Divisão das 42 regiões e regras de conquista — proposta detalhada v0.2](docs/territorios-e-conquista-v0.2.md)
 - [Decisão 03 — Conquista, ocupação e capitulação v0.3](docs/conquista-e-ocupacao-v0.3.md)
 - [Decisão 04 — Capitulação por pressão e continuidade do derrotado v0.4](docs/capitulacao-e-continuidade-v0.4.md)
+- [Decisão 05 — Ciclos militares de 30 minutos e ordens persistentes v0.5](docs/ciclos-militares-e-ordens-v0.5.md)
 - **Prévia visual mobile publicada (sem backend):** https://crise-sul-americana-2030.vercel.app/ 
 - Código: [site/](site/) — HTML, CSS e JavaScript, modo demonstração.
 - Estado: protótipo de interface publicado; motor de economia, diplomacia e guerra ainda não implementado.
-- Próximo marco: validar os pontos estratégicos, parâmetros de capitulação, consolidação da ocupação e intervalo militar antes de implementar o motor de guerra.
+- Próximo marco: validar os pontos estratégicos, parâmetros de capitulação, consolidação da ocupação e autonomia de ordens (microciclos militares já aprovados: 30 minutos) antes de implementar o motor de guerra.
 
 **Não reutilizar dados, convites, senhas ou chaves do Domínio Global.**
