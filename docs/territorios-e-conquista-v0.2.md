@@ -2,6 +2,7 @@
 
 **Campanha:** Crise Sul-Americana — 2030 (países reais; história alternativa).
 **Decisão oficial nº 02:** opção C, **mapa hierárquico**; escala inicial **42 regiões estratégicas / 8 países propostos**.
+**Decisão oficial nº 03:** opção C, **ocupação e controle administrativo parciais, anexação definitiva apenas por tratado, capitulação ou processo político previsto**. Consulte [Mecânicas de conquista e ocupação v0.3](conquista-e-ocupacao-v0.3.md).
 **Estado deste arquivo:** detalhamento técnico de design **proposto**. A *estrutura hierárquica* e o *alvo de 42 regiões* estão aprovados; os nomes, agregações, pontos e números de controle precisam de validação cartográfica/balanceamento. Nenhum motor implementado.
 
 ## 1. Hierarquia que o jogador realmente controla
