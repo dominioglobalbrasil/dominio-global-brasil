@@ -3,6 +3,7 @@
 **Decisão de produto (07/11/2026):** o nome do jogo é ESTATUM. A campanha inicial mantém o nome **Crise Sul-Americana — 2030**.
 **Diretriz aprovada:** a guerra moderna, fortemente transformada pelos sistemas não tripulados durante o conflito na Ucrânia, será um diferencial estruturante da simulação, não apenas uma unidade militar adicional.
 **Status:** concepção de mecânicas. Valores e fórmulas dependem de testes e aprovação. Sem alterações na base de dados ou deploy nesta etapa.
+**Atualização 07/11/2026:** operações de reconhecimento, combate e defesa antidrone passam a ser resolvidas no ciclo militar aprovado de **30 minutos**; ver [especificação v0.5](ciclos-militares-e-ordens-v0.5.md). Duração/consumo/eficácia de missões seguem pendentes de balanceamento.
 **Princípio:** poucos jogadores, qualidade máxima, jogabilidade mobile, mecânicas expansíveis.
 
 ## 1. Identidade do ESTATUM
