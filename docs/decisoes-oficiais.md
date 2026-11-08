@@ -74,6 +74,30 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Detalhamento de engenharia e UX:** [Dinâmica militar e ordens v0.5](ciclos-militares-e-ordens-v0.5.md).
 - **Ainda não aprovados:** velocidades por formação e terreno, tabelas de perdas, alcance/duração de missões, consumo, fila/prioridade logística, número inicial de formações e limites de ordens por país. São parâmetros para balanceamento, não novas escolhas presumidas.
 
+## Decisão 14 — Abrangência sul-americana (APROVADA)
+**Data:** 08/11/2026.
+
+**Escolha do responsável:** ESTATUM terá abrangência na **América do Sul**, com **países reais jogáveis**.
+
+- Cada jogador governa um **país** e não uma Unidade da Federação brasileira como entidade soberana independente.
+- A campanha inicial mantém a premissa ficcional **Crise Sul-Americana — 2030**, com países e geografia reais, governos e eventos fictícios.
+- A restrição de mapa somente ao Brasil, 27 UFs, encontrada em um dossiê de continuidade, **não é a regra atual**. A proposta de uma federação exclusivamente brasileira em crise não foi aprovada.
+- Países podem conter regiões estratégicas, pontos e setores, mas controle tático e ocupação não equivalem a soberania, conforme Decisões 02 e 03.
+- **Referência de aprovação:** [issue #1](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/1).
+
+## Decisão 15 — Oito países jogáveis na estreia (APROVADA)
+**Data:** 08/11/2026.
+
+**Escolha do responsável:** opção **A**, oito países controláveis inicialmente, escala inicial de **42 regiões estratégicas**, com expansão posterior.
+
+- **Países jogáveis na primeira campanha:** Brasil, Argentina, Chile, Bolívia, Paraguai, Uruguai, Peru e Equador.
+- **Distribuição geográfica inicial do modelo C:** Brasil 6; Argentina 6; Chile 5; Bolívia 5; Paraguai 5; Uruguai 4; Peru 6; Equador 5. **Total: 42.** Os agrupamentos e limites específicos ainda exigem validação cartográfica e de balanceamento.
+- A geografia da campanha continua sendo a **América do Sul**, embora os demais países **não estejam disponíveis para seleção no lançamento inicial**. Eles não devem ser tratados como territórios vazios ou automaticamente conquistáveis.
+- Os **oito países e as 42 regiões são conteúdo inicial, não limites de arquitetura**. Novos países, pontos e setores devem ser incorporáveis por catálogos versionados.
+- Quantidade de regiões não deve equalizar artificialmente população, riqueza, capacidade industrial ou força militar.
+- **Aguardam decisão separada:** como funcionam países sem jogador e países não selecionáveis (Decisão 16); condições de vitória e duração da campanha (Decisão 17).
+- **Referência de aprovação:** [issue #2](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/2).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
