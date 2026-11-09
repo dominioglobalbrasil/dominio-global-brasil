@@ -98,6 +98,19 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Aguardam decisão separada:** como funcionam países sem jogador e países não selecionáveis (Decisão 16); condições de vitória e duração da campanha (Decisão 17).
 - **Referência de aprovação:** [issue #2](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/2).
 
+## Decisão 16 — Continuidade híbrida e defesa de países sem jogador (APROVADA)
+**Data:** 09/11/2026.
+
+**Escolha do responsável:** opção **C — modelo híbrido de continuidade e defesa**.
+
+- **País selecionável ainda sem jogador:** políticas e orçamento persistentes, produção, consumo, arrecadação e obrigações seguem os ciclos de **12 horas**; defesa reativa e ordens persistentes de unidades são executadas pelo servidor nos ciclos de **30 minutos**, limitadas aos recursos, estoques, informações e condições existentes.
+- **Sem IA ofensiva arbitrária:** o sistema não inicia guerras, ofensivas, anexações, alianças ou tratados estratégicos em nome de governantes ausentes. Mantém defesa, preservação de forças e compromissos vigentes, sempre conforme regras e posturas documentadas.
+- **Entrada do jogador:** assume o estado persistido do país (recursos, perdas, forças, tratados, dívidas e efeitos anteriores) sem reset ou bônus artificial.
+- **Demais países sul-americanos representados, mas não selecionáveis na estreia:** conservam soberania, fronteiras e integridade cartográfica; não são territórios vazios nem passíveis de ocupação/conquista até que sua simulação e regras sejam implementadas e aprovadas.
+- **Auditabilidade:** registrar decisões humanas, ordens anteriormente configuradas e ações automáticas do servidor; processamento reexecutável sem duplicação de recursos ou efeitos.
+- **Parâmetros pendentes:** detalhar a defesa reativa, as posturas padrão e a substituição de jogadores com testes; esta decisão não aprova os coeficientes.
+- **Referência de aprovação:** [issue #4](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/4).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
