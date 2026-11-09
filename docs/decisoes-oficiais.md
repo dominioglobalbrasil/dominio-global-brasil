@@ -111,6 +111,21 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Parâmetros pendentes:** detalhar a defesa reativa, as posturas padrão e a substituição de jogadores com testes; esta decisão não aprova os coeficientes.
 - **Referência de aprovação:** [issue #4](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/4).
 
+## Decisão 17 — Campanha de 20 dias e vitória multicritério (APROVADA)
+**Data:** 09/11/2026.
+
+**Escolha do responsável:** opção **A — campanha inicial de 40 turnos de 12 horas reais = 20 dias corridos reais**, com encerramento e classificação ao final; aprovado também o **modelo de vitória multicritério originalmente proposto**.
+
+- **Cinco pilares, total máximo de 100 pontos:** prosperidade e responsabilidade fiscal **25**; governo e estabilidade **20**; diplomacia e confiabilidade **25**; segurança e soberania **20**; objetivos nacionais específicos **10**.
+- Cada pilar usa uma escala de desempenho de **0 a 100**, ponderada pelo respectivo peso. A pontuação é calculada por critérios versionados e auditáveis, usando progresso em relação às condições iniciais, métricas per capita/capacidade e metas apropriadas a cada país; não favorece automaticamente potência ou território maior.
+- **Vitória não depende de guerra:** captura de capital, capitulação alheia, número de conflitos ou unidades eliminadas não encerram a campanha nem geram pontos automáticos de vitória. Diplomacia, boa administração e segurança são caminhos competitivos.
+- **Encerramento:** apuração após o fechamento do **40º turno**, com horário preciso de abertura/fechamento e regras de empate/ordem de processamento a detalhar. Microciclos militares de 30 minutos e vigência de tratados seguem as Decisões 01 e 05.
+- **Antiabuso e transparência:** não pontuar artificialmente transferências circulares, tratados sem benefício executado ou ações repetidas; armazenar trilha de cálculo, fontes e versão da regra. Não alterar critérios silenciosamente durante uma campanha.
+- **Tempo da campanha versus cenário:** 20 dias são tempo **real**; o cenário fictício é ambientado em 2030. A escala de desenvolvimento de infraestrutura, indústria, tecnologia, demografia e política exige especificação e balanceamento, sem pressupor que 12 horas reais equivalem a 12 horas históricas.
+- **Ainda pendentes:** métricas/fórmulas exatas, metas nacionais equivalentes para os oito países, critérios de desempate a validar, horários e congelamento final, durações/efeitos de investimentos e balanceamento. O modelo é aprovado; os coeficientes detalhados ainda não foram testados.
+- A duração e os pesos desta campanha são **fixos por decisão de produto**, porém devem ser **parametrizáveis por cenário** no motor futuro, sem alterar temporada em andamento.
+- **Referência de aprovação:** [issue #5](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/5).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
