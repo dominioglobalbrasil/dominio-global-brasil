@@ -126,6 +126,20 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - A duração e os pesos desta campanha são **fixos por decisão de produto**, porém devem ser **parametrizáveis por cenário** no motor futuro, sem alterar temporada em andamento.
 - **Referência de aprovação:** [issue #5](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/5).
 
+## Decisão 18 — Objetivos nacionais híbridos (APROVADA)
+**Data:** 09/11/2026.
+
+**Escolha do responsável:** opção **C — 5 pontos por objetivo nacional estrutural e 5 pontos por agenda estratégica escolhida pelo jogador**, dentro dos **10 pontos** do componente de objetivos nacionais definido pela Decisão 17.
+
+- **Objetivo estrutural (até 5 pontos):** específico para cada país da campanha, definido em catálogo versionado e contextualizado conforme geografia, população, economia e desafios nacionais do cenário. Progresso avaliado com indicadores verificáveis e coerentes com a situação inicial.
+- **Agenda estratégica (até 5 pontos):** o governante escolhe no começo da campanha entre alternativas viáveis para seu país. Áreas candidatas incluem modernização produtiva, integração comercial, estabilidade fiscal, instituições e defesa; **o elenco final de agendas permanece pendente**.
+- **Equidade sem nivelamento artificial:** todos dispõem do mesmo potencial de pontuação, mas metas são calibradas por capacidade, baseline e dificuldade viável; não presumir indicadores nacionais idênticos.
+- **Sem belicismo obrigatório:** nenhum país precisa declarar guerra, conquistar território ou destruir forças inimigas para atingir a pontuação máxima possível deste componente.
+- **Evidências e antiabuso:** aferir evolução observável ao longo dos turnos, evitar pontuação por pico temporário no encerramento e vedar ganho duplicado mediante mudança oportunista de agenda; registrar cálculos, fontes e versão da regra.
+- **Pendências a especificar:** objetivos concretos dos oito países, indicadores e faixas de progresso, agendas disponíveis, política de troca e atribuição de agenda a país ainda sem jogador (Decisão 16), alinhamento com 40 turnos e modelo temporal histórico.
+- Os demais pesos da vitória multicritério **não** são alterados.
+- **Referência de aprovação:** [issue #6](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/6).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
