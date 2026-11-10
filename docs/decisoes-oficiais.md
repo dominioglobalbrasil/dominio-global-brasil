@@ -168,6 +168,21 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **A definir:** catálogo e parâmetros, limites de projetos simultâneos, progressão, cancelamento, balanceamento e, especialmente, **tratamento de projetos inacabados no fim da temporada** (Decisão 21). Não assumir reinício ou continuidade sem decisão.
 - **Referência de aprovação:** [issue #8](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/8).
 
+## Decisão 21 — Campanhas independentes com histórico arquivado (APROVADA)
+**Data:** 10/11/2026.
+
+**Escolha do responsável:** opção **A — cada temporada é uma campanha independente, com reinício competitivo a partir de cenário inicial versionado**.
+
+- **Encerramento imutável:** após o turno 40/20º dia real (Decisão 17), apurar vencedor, congelar pontuação e registrar snapshot final, histórico de eventos, tratados, soberania, operações militares, dados econômicos e projetos, inclusive os incompletos.
+- **Arquivo histórico consultável:** a campanha encerrada permanece disponível para consulta, com identidade do cenário, dados e versão de regras; não se mistura com o estado operacional de novas campanhas.
+- **Nova campanha:** inicia no estado de cenário previamente versionado, sem herdar automaticamente riqueza, tropas, dívidas, obrigações, ocupações, projetos, pesquisas ou qualquer benefício material de campanhas anteriores. Os participantes podem escolher país disponível novamente.
+- **Obras e pesquisas não concluídas:** permanecem no arquivo histórico, mas não evoluem nem consomem recursos após o encerramento; benefícios parciais apenas das etapas já operacionais durante a temporada encerrada (Decisão 20).
+- **Equidade:** não criar vantagens competitivas a jogadores veteranos por conquistas anteriores; possíveis honrarias históricas não alteram economia e forças de uma nova campanha.
+- **Transações e auditoria:** nenhuma resolução atrasada pode reabrir a pontuação já apurada; operações de arquivo e geração de campanha devem ser versionadas e não duplicar recursos nem saldos.
+- **Consequência de design:** grandes projetos sem etapa operacional dentro de 40 semanas fictícias não pontuam nem geram efeito econômico na campanha; exibir prazo e retorno efetivo previsto para evitar escolhas enganosas.
+- **Pendências técnicas:** esquema de snapshot/retention, regra operacional de início de nova temporada, sala de seleção, datas e horários e fórmula de desempate. Nenhum reset ou arquivamento foi implementado.
+- **Referência de aprovação:** [issue #9](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/9).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
