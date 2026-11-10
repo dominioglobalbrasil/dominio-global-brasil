@@ -154,6 +154,20 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Pendências:** fixar calendário exato de abertura/encerramento, parâmetros de deslocamento, taxas proporcionais, durações de investimento e tratamento de projetos inacabados ao final da campanha.
 - **Referência de aprovação:** [issue #7](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/7).
 
+## Decisão 20 — Desenvolvimento por etapas e capacidade produtiva (APROVADA)
+**Data:** 09/11/2026.
+
+**Escolha do responsável:** opção **C — projetos com etapas auditáveis e resultados parciais apenas quando funcionalmente justificados**.
+
+- **Etapas:** projetos podem percorrer preparação, execução, comissionamento e operação, conforme a categoria; cada etapa tem pré-requisitos, custos, insumos, mão de obra agregada, capacidade, riscos e duração em semanas fictícias.
+- **Prazos coerentes:** aplicar Decisão 19 (7 dias fictícios por turno de governo de 12 horas reais). Obras de vários anos não são artificialmente concluídas dentro dos 40 turnos; projetos menores podem caber na campanha.
+- **Benefícios parciais reais:** etapas ou trechos que já funcionem podem produzir efeitos proporcionais, como segmentos logísticos operacionais, capacidade industrial instalada ou pessoal efetivamente treinado. Etapas inacabadas ou preparatórias não entregam capacidade plena.
+- **Restrições:** falta de recursos financeiros, insumos, energia, trabalhadores, capacidade logística e infraestrutura provoca atrasos/pausas. Desgaste, dano, reparação e manutenção têm custos verificáveis; nenhum recurso é gerado gratuitamente.
+- **Pontuação:** reconhecer benefícios efetivamente realizados, sem premiar apenas iniciação de projetos nem duplicar resultados por etapas.
+- **População e mercado de trabalho:** simulação agregada, sem operários individuais. A interface mobile mostra etapa, gargalos, prazos, custos, riscos e efeitos realizados.
+- **A definir:** catálogo e parâmetros, limites de projetos simultâneos, progressão, cancelamento, balanceamento e, especialmente, **tratamento de projetos inacabados no fim da temporada** (Decisão 21). Não assumir reinício ou continuidade sem decisão.
+- **Referência de aprovação:** [issue #8](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/8).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
