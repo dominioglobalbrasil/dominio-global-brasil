@@ -140,6 +140,20 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - Os demais pesos da vitória multicritério **não** são alterados.
 - **Referência de aprovação:** [issue #6](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/6).
 
+## Decisão 19 — Aceleração estratégica do tempo (APROVADA)
+**Data:** 09/11/2026.
+
+**Escolha do responsável:** opção **C — cada turno de governo/economia com duração de 12 horas reais representa 7 dias (uma semana) no calendário fictício da campanha**.
+
+- **Campanha inicial:** 40 turnos × 7 dias fictícios = **280 dias ou 40 semanas fictícias**, durante **20 dias reais**, conforme a Decisão 17. Os dois calendários não podem ser confundidos.
+- **Resolução militar:** a cada **30 minutos reais**, correspondendo a **7 horas fictícias**. Cada período militar é uma janela estratégica/operacional agregada; o motor não deve tratá-la como evento tático instantâneo, nem permitir movimentos/ataques incompatíveis com esse intervalo.
+- **Relógio canônico:** tempo real controla disparo do processamento; tempo ficcional determina duração e efeitos de obras, produção, investigação, mobilização, treinamento, demografia, logística e operações. O mapa temporal real-ficcional é versionado e fixo por campanha.
+- **Diplomacia contínua:** propostas e tratados podem ser formalizados a qualquer momento real, com entrada em vigor explícita e sem efeitos retroativos; aplica-se a mesma precedência temporal às resoluções militares/econômicas.
+- **Interface:** apresentar data fictícia e horário real do próximo fechamento, com escala temporal informada ao jogador.
+- **Realismo:** escala acelerada não autoriza conclusão instantânea de obras de anos, evolução demográfica exagerada ou produção sem recursos. O ritmo de progresso e os marcos dos projetos serão detalhados separadamente.
+- **Pendências:** fixar calendário exato de abertura/encerramento, parâmetros de deslocamento, taxas proporcionais, durações de investimento e tratamento de projetos inacabados ao final da campanha.
+- **Referência de aprovação:** [issue #7](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/7).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
