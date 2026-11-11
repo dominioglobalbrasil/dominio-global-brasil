@@ -199,6 +199,22 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Pendências:** fontes efetivas, catálogo de variáveis, números iniciais, projeções, fórmulas de economia/defesa e teste de balanceamento. Esta decisão **não aprova valores numéricos específicos nem implementação**.
 - **Referência da aprovação:** [issue #10](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/10).
 
+## Decisão 23 — Economia em três camadas (APROVADA)
+**Data:** 10/11/2026.
+
+**Escolha do responsável:** opção **C — sistema financeiro/fiscal, estoques físicos estratégicos e logística por rotas interdependentes**.
+
+- **Finanças:** tesouro, receitas, despesas, dívida e serviço da dívida, investimentos, manutenção e obrigações de acordos. Dinheiro não vira recursos físicos instantâneos.
+- **Produção e estoques:** quatro grupos estratégicos iniciais **alimentos; energia/combustíveis; insumos industriais; materiais militares**, cada um com produção, consumo e armazenamento distintos. Capacidade regional, trabalho agregado, energia, insumos, infraestrutura, manutenção e danos condicionam a oferta.
+- **Subcategorias possíveis:** combustível, munição e peças poderão ter modelagem mais detalhada conforme necessidades comprovadas dos motores, mantendo vínculo contábil com os grupos de origem, sem contagem dupla.
+- **Logística:** nós e rotas de capacidade limitada, distância, tempo de trânsito, direito de passagem, bloqueios e riscos; estoque em local remoto não está imediatamente disponível em qualquer região.
+- **Conservação e auditoria:** transferências e comércio debitam origem e creditam destino com prazo/capacidade; proibir estoque negativo, duplicação por reprocessamento, criação gratuita de materiais e dupla cobrança entre microciclos militares e turnos econômicos.
+- **Periodicidade:** economia/produção a cada **12h reais = 7 dias fictícios** (Decisões 01 e 19); consumo militar operacional nos microciclos de **30min reais = 7h fictícias**, compatibilizado com o fechamento econômico.
+- **Visualização:** gabinete mobile com tesouro, receita por turno, estabilidade política, capacidade produtiva, abastecimento estratégico e dívida/obrigações, expandindo estoques e detalhes logísticos sob demanda.
+- **Condições iniciais:** conservar assimetrias reais entre países/regiões e rastrear fontes e desvios ficcionais de 2030, conforme Decisão 22.
+- **Não definidos nesta decisão:** unidade monetária definitiva, câmbio, emissão, política fiscal/monetária específica, preços, fórmulas, estoques iniciais, detalhamento das mercadorias e implementação técnica. A unidade abstrata `CG` citada no documento econômico v0.1 **não foi ratificada aqui**.
+- **Referência de aprovação:** [issue #11](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/11).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
