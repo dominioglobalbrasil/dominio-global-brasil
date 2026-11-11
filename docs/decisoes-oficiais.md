@@ -183,6 +183,22 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Pendências técnicas:** esquema de snapshot/retention, regra operacional de início de nova temporada, sala de seleção, datas e horários e fórmula de desempate. Nenhum reset ou arquivamento foi implementado.
 - **Referência de aprovação:** [issue #9](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/9).
 
+## Decisão 22 — Base de dados real verificável e história alternativa de 2030 (APROVADA)
+**Data:** 10/11/2026.
+
+**Escolha do responsável:** opção **C — condições iniciais fundamentadas em dados reais verificáveis, com diferenças fictícias de 2030 documentadas e auditáveis**.
+
+- **Fontes e rastreabilidade:** cada indicador inicial de país/região precisa de fonte, ano, unidade, conceito, limitações e metodologia de agregação. Estimativas e projeções devem ser rotuladas, e nunca apresentadas como estatísticas oficiais observadas em 2030.
+- **História alternativa:** divergências econômicas, políticas, industriais, energéticas e militares do cenário inicial são parâmetros fictícios, com justificativa, causa e impacto registrados no catálogo versionado da campanha.
+- **Assimetrias reais:** conservar diferenças estruturais entre países em população, área, produção, recursos, infraestrutura, acesso logístico, capacidade fiscal, indústria e defesa. Justiça na pontuação decorre da normalização de condições de partida e objetivos da Decisão 17, não da equalização artificial de riquezas e forças.
+- **Agregação regional:** distribuir capacidade econômica, estoques, infraestrutura, população e outros dados entre as regiões estratégicas preservando totais nacionais e sem dupla contagem; a quantidade de polígonos não gera recursos adicionais.
+- **Demografia:** para o Brasil, utilizar fontes do IBGE; para demais países, fontes oficiais nacionais e séries harmonizadas quando disponíveis, documentando cobertura e metodologia. Modelar coortes populacionais agregadas, não pessoas individuais; dados municipais detalhados dependerão da fonte de cada país.
+- **Forças e prontidão:** quando informação pública não for suficiente, valores fictícios de design são permitidos se explicitamente identificados, rastreáveis e coerentes; não alegar acesso a dados militares secretos.
+- **Congelamento por campanha:** snapshot inicial com versão de cenário e fontes, sem mutações silenciosas durante a temporada. Atualizações entram apenas em futuras campanhas independentes (Decisão 21).
+- **Transparência:** disponibilizar ao jogador um resumo dos dados iniciais e da hipótese alternativa de 2030, sem expor informações privadas de adversários.
+- **Pendências:** fontes efetivas, catálogo de variáveis, números iniciais, projeções, fórmulas de economia/defesa e teste de balanceamento. Esta decisão **não aprova valores numéricos específicos nem implementação**.
+- **Referência da aprovação:** [issue #10](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/10).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
