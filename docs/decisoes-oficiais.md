@@ -215,6 +215,21 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Não definidos nesta decisão:** unidade monetária definitiva, câmbio, emissão, política fiscal/monetária específica, preços, fórmulas, estoques iniciais, detalhamento das mercadorias e implementação técnica. A unidade abstrata `CG` citada no documento econômico v0.1 **não foi ratificada aqui**.
 - **Referência de aprovação:** [issue #11](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/11).
 
+## Decisão 24 — Regime monetário híbrido e câmbio por turno (APROVADA)
+**Data:** 11/11/2026.
+
+**Escolha do responsável:** opção **C — representação monetária por país, unidade técnica comum para contabilidade e câmbio processado no fechamento de cada turno econômico**.
+
+- **Regime e moeda próprios:** cada país possui sistema monetário compatível com sua configuração econômica/institucional no cenário alternativo de 2030, inclusive países que utilizem oficialmente moeda estrangeira; **não presumir banco central emissor independente para todos**. A lista final de moedas/regimes é pendência de catálogo.
+- **Unidade contábil comum:** adotar uma unidade **interna ao motor** para escrituração e comparação, sem criar riqueza, moeda supranacional efetiva ou recursos negociáveis adicionais. O nome `Créditos de Governo (CG)` citado na especificação econômica v0.1 é **uma possibilidade de nomenclatura, ainda não aprovada**.
+- **Câmbio:** apuração/atualização no fechamento de **12 horas reais = 7 dias fictícios** (Decisões 01 e 19), com taxas iniciais rastreadas, variações limitadas por mecanismos parametrizados e impacto de comércio, reservas, dívida, confiança, liquidez e eventos. Sem bolsa cambial de alta frequência.
+- **Separação de Tesouro e emissão:** caixa público, obrigações financeiras, ativos/reservas internacionais, agregados monetários e autoridade emissora não são uma variável só. Emitir moeda, quando legalmente possível no regime representado, não equivale a financiar despesas sem custo ou consequências.
+- **Acordos internacionais:** registrar moeda de denominação, conversão aplicável, data de liquidação, custos e risco cambial; não gerar dinheiro por múltiplas conversões ou repetir um contrato.
+- **Interface e transparência:** valores de governo na moeda vigente do país, com equivalência e data de referência quando necessário. Apresentar reservas, dívidas e risco de câmbio sem ocultar exposição.
+- **Conservação e auditoria:** impedir arbitragem circular sem custo, inflação arbitrária, ativos duplicados por reprocessamento ou saldo negativo indevido; manter regras e histórico versionados por campanha (Decisão 21).
+- **Pendências:** nome técnico da unidade, moedas e regimes definitivos, fórmula do câmbio, inflação, taxas, emissão, reservas, juros, política de crédito, limites fiscais e testes. **Aprovação de design não é implementação técnica**.
+- **Referência de aprovação:** [issue #12](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/12).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
