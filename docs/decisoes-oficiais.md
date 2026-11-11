@@ -230,6 +230,22 @@ Registro das escolhas **aprovadas pelo responsável pelo projeto**. Prevalece so
 - **Pendências:** nome técnico da unidade, moedas e regimes definitivos, fórmula do câmbio, inflação, taxas, emissão, reservas, juros, política de crédito, limites fiscais e testes. **Aprovação de design não é implementação técnica**.
 - **Referência de aprovação:** [issue #12](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/12).
 
+## Decisão 25 — Crédito público condicionado a capacidade fiscal e risco (APROVADA)
+**Data:** 11/11/2026.
+
+**Escolha do responsável:** opção **C — crédito condicionado à capacidade fiscal, solvência, obrigações prévias e risco, com proteção contra endividamento oportunista no encerramento da campanha**.
+
+- **Fontes e contrapartida:** empréstimos entre países, títulos internos e mercado externo limitado, quando implementados, precisam de credor, disponibilidade, obrigação de pagamento e registros financeiros auditáveis. A concessão não cria caixa simultaneamente para as duas partes.
+- **Limites dinâmicos:** capacidade de contratação depende de receita recorrente, serviço da dívida, reservas, estabilidade, histórico de pagamento, obrigações existentes e risco cambial. Não equalizar condições de crédito entre países.
+- **Contratos:** principal, moeda, custo/juros, vencimentos, fluxo de pagamentos, exposição cambial e garantias quando houver; empréstimos e refinanciamentos não podem eliminar o principal artificialmente.
+- **Independência entre dinheiro e insumos:** obter crédito não produz material militar, alimento, energia ou infraestrutura instantaneamente; aplicam-se estoques e logística da Decisão 23.
+- **Inadimplência gradual:** consequências econômicas/políticas progressivas, restrição a novos créditos e renegociação; inadimplência não implica anexação, guerra automática nem expulsão súbita (Decisões 03–04).
+- **Fim da campanha:** contabilizar e avaliar **passivos, serviço futuro e dívida ainda não vencida** no desempenho fiscal e solvência do turno 40, inclusive empréstimos contratados perto do encerramento. O arquivamento da temporada e reinício sem herança da Decisão 21 não apagam custos do placar final.
+- **Antiabuso:** vedar crédito circular, saldo ou pontuação duplicados, contraparte com liquidez inexistente, reprocessamento repetido e arbitragem monetária que gere riqueza artificial.
+- **País sem jogador:** honrar políticas e contratos preexistentes; IA não inicia empréstimos estratégicos arbitrários, conforme Decisão 16.
+- **Pendências:** fontes operacionais de crédito, percentuais/tetos, taxas, risco, garantias, inadimplência e fórmulas detalhadas de solvência e pontuação continuam **não aprovados**, dependentes de especificação e testes.
+- **Referência de aprovação:** [issue #13](https://github.com/dominioglobalbrasil/dominio-global-brasil/issues/13).
+
 ## Decisões anteriores preservadas
 - **ESTATUM** é o nome oficial do jogo.
 - Primeira campanha **Crise Sul-Americana — 2030**, países reais e história alternativa.
